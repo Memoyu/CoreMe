@@ -10,11 +10,11 @@
 *   功能描述 ：
 ***************************************************************************/
 using Autofac;
+using FreeSql;
+using FreeSql.Internal;
+using Memoyu.Extensions.FreeSqlExt;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Memoyu.Extensions.Configuration
 {
@@ -28,6 +28,22 @@ namespace Memoyu.Extensions.Configuration
 
         protected override void Load(ContainerBuilder builder)
         {
+            IFreeSql fsql = new FreeSqlBuilder()
+              .UseConnectionString(_configuration)
+              .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
+              .UseAutoSyncStructure(true)
+              .UseNoneCommandParameter(true)
+              .UseMonitorCommand(cmd =>
+              {
+                  Trace.WriteLine(cmd.CommandText + ";");
+              }
+              )
+              .CreateDatabaseIfNotExists()
+              .Build()
+              .SetDbContextOptions(opt => opt.EnableAddOrUpdateNavigateList = true)//联级保存功能开启（默认为关闭）
+              ;
         }
+
+      
     }
 }
