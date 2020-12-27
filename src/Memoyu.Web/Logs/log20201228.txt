@@ -20,3 +20,9 @@ File name: 'Memoyu.Application, Culture=neutral, PublicKeyToken=null'
 2020-12-28 00:20:40.518 +08:00 [INF] Hosting environment: Development
 2020-12-28 00:20:40.518 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
 2020-12-28 00:20:44.194 +08:00 [INF] Application is shutting down...
+2020-12-28 00:46:27.622 +08:00 [INF] init main
+2020-12-28 00:46:28.824 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-28 00:46:28.827 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-28 00:46:28.827 +08:00 [INF] Hosting environment: Development
+2020-12-28 00:46:28.827 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-28 00:46:35.611 +08:00 [INF] Application is shutting down...
