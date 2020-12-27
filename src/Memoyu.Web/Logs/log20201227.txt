@@ -1,0 +1,194 @@
+2020-12-27 17:15:27.797 +08:00 [INF] init main
+2020-12-27 17:15:28.179 +08:00 [FTL] IIpPolicyStore RUN Error
+Autofac.Core.Registration.ComponentNotRegisteredException: The requested service 'AspNetCoreRateLimit.IIpPolicyStore' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency.
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetRequiredService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Memoyu.Web.Program.Main(String[] args) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web\Program.cs:line 46
+2020-12-27 17:15:28.401 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 17:15:28.404 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 17:15:28.404 +08:00 [INF] Hosting environment: Development
+2020-12-27 17:15:28.404 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 17:15:29.268 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2020-12-27 17:15:29.446 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 180.6308ms
+2020-12-27 17:15:29.532 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2020-12-27 17:15:29.545 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.3101ms
+2020-12-27 17:26:38.677 +08:00 [INF] init main
+2020-12-27 17:26:39.076 +08:00 [FTL] IIpPolicyStore RUN Error
+Autofac.Core.Registration.ComponentNotRegisteredException: The requested service 'AspNetCoreRateLimit.IIpPolicyStore' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency.
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetRequiredService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Memoyu.Web.Program.Main(String[] args) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web\Program.cs:line 46
+2020-12-27 17:26:39.281 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 17:26:39.284 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 17:26:39.284 +08:00 [INF] Hosting environment: Development
+2020-12-27 17:26:39.284 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 17:26:40.073 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2020-12-27 17:26:40.254 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 182.2464ms
+2020-12-27 17:26:40.343 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2020-12-27 17:26:40.356 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 13.2447ms
+2020-12-27 18:51:20.429 +08:00 [INF] init main
+2020-12-27 18:51:20.890 +08:00 [FTL] IIpPolicyStore RUN Error
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating AspNetCoreRateLimit.DistributedCacheIpPolicyStore.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'AspNetCoreRateLimit.DistributedCacheIpPolicyStore' can be invoked with the available services and parameters:
+Cannot resolve parameter 'Microsoft.Extensions.Caching.Distributed.IDistributedCache cache' of constructor 'Void .ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache, Microsoft.Extensions.Options.IOptions`1[AspNetCoreRateLimit.IpRateLimitOptions], Microsoft.Extensions.Options.IOptions`1[AspNetCoreRateLimit.IpRateLimitPolicies])'.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.GetAllBindings(ConstructorBinder[] availableConstructors, IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.<ConfigurePipeline>b__11_0(ResolveRequestContext ctxt, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DelegateMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.RegistrationPipelineInvokeMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.<>c__DisplayClass5_0.<Execute>b__0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid primaryId, Nullable`1 qualifyingId, Func`1 creator)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetRequiredService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Memoyu.Web.Program.Main(String[] args) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web\Program.cs:line 46
+2020-12-27 18:51:21.126 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 18:51:21.128 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 18:51:21.129 +08:00 [INF] Hosting environment: Development
+2020-12-27 18:51:21.129 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 19:26:07.178 +08:00 [INF] init main
+2020-12-27 19:26:07.803 +08:00 [FTL] IIpPolicyStore RUN Error
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating AspNetCoreRateLimit.DistributedCacheIpPolicyStore.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'AspNetCoreRateLimit.DistributedCacheIpPolicyStore' can be invoked with the available services and parameters:
+Cannot resolve parameter 'Microsoft.Extensions.Caching.Distributed.IDistributedCache cache' of constructor 'Void .ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache, Microsoft.Extensions.Options.IOptions`1[AspNetCoreRateLimit.IpRateLimitOptions], Microsoft.Extensions.Options.IOptions`1[AspNetCoreRateLimit.IpRateLimitPolicies])'.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.GetAllBindings(ConstructorBinder[] availableConstructors, IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.<ConfigurePipeline>b__11_0(ResolveRequestContext ctxt, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DelegateMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.RegistrationPipelineInvokeMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.<>c__DisplayClass5_0.<Execute>b__0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid primaryId, Nullable`1 qualifyingId, Func`1 creator)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetRequiredService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Memoyu.Web.Program.Main(String[] args) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web\Program.cs:line 46
+2020-12-27 19:26:08.016 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 19:26:08.018 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 19:26:08.019 +08:00 [INF] Hosting environment: Development
+2020-12-27 19:26:08.020 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 19:26:21.066 +08:00 [INF] Application is shutting down...
+2020-12-27 19:27:27.058 +08:00 [INF] init main
+2020-12-27 19:27:35.965 +08:00 [FTL] IIpPolicyStore RUN Error
+System.Exception: 【127.0.0.1:6379/0】状态不可用，等待后台检查程序恢复方可使用。Connection was not opened
+ ---> CSRedis.RedisClientException: Connection was not opened
+   at CSRedis.Internal.IO.RedisIO.GetOrThrow[T](T obj)
+   at CSRedis.Internal.IO.RedisIO.get_Stream()
+   at CSRedis.Internal.IO.RedisIO.Write(Byte[] data)
+   at CSRedis.Internal.RedisConnector.Call[T](RedisCommand`1 command)
+   at CSRedis.RedisClient.Write[T](RedisCommand`1 command)
+   at CSRedis.RedisClient.Ping()
+   at CSRedis.RedisClientPoolPolicy.OnCheckAvailable(Object`1 obj)
+   at CSRedis.RedisClientPoolPolicy.PrevReheatConnectionPool(ObjectPool`1 pool, Int32 minPoolSize)
+   --- End of inner exception stack trace ---
+   at CSRedis.Internal.ObjectPool.ObjectPool`1.getFree(Boolean checkAvailable)
+   at CSRedis.Internal.ObjectPool.ObjectPool`1.GetAsync()
+   at CSRedis.CSRedisClient.GetClientAsync(RedisClientPool pool)
+   at CSRedis.CSRedisClient.GetAndExecuteAsync[T](RedisClientPool pool, Func`2 handerAsync, Int32 jump, Int32 errtimes)
+   at CSRedis.CSRedisClient.ExecuteScalarAsync[T](String key, Func`3 handerAsync)
+   at Microsoft.Extensions.Caching.Redis.CSRedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at AspNetCoreRateLimit.DistributedCacheIpPolicyStore.SeedAsync()
+   at Memoyu.Web.Program.Main(String[] args) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web\Program.cs:line 48
+2020-12-27 19:27:36.138 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 19:27:36.141 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 19:27:36.141 +08:00 [INF] Hosting environment: Development
+2020-12-27 19:27:36.141 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 19:27:43.024 +08:00 [INF] Application is shutting down...
+2020-12-27 19:46:55.903 +08:00 [INF] init main
+2020-12-27 19:46:56.862 +08:00 [FTL] IIpPolicyStore RUN Error
+System.Exception: 【127.0.0.1:6379/0】状态不可用，等待后台检查程序恢复方可使用。NOAUTH Authentication required.
+Command: PING 
+ ---> CSRedis.RedisException: NOAUTH Authentication required.
+Command: PING 
+ ---> CSRedis.RedisException: NOAUTH Authentication required.
+   at CSRedis.Internal.IO.RedisReader.ReadType()
+   at CSRedis.Internal.IO.RedisReader.ExpectType(RedisMessage expectedType)
+   at CSRedis.Internal.IO.RedisReader.ReadStatus(Boolean checkType)
+   at CSRedis.Internal.Commands.RedisStatus.Parse(RedisReader reader)
+   at CSRedis.Internal.RedisConnector.Call[T](RedisCommand`1 command)
+   --- End of inner exception stack trace ---
+   at CSRedis.Internal.RedisConnector.Call[T](RedisCommand`1 command)
+   at CSRedis.RedisClient.Write[T](RedisCommand`1 command)
+   at CSRedis.RedisClient.Ping()
+   at CSRedis.RedisClientPoolPolicy.OnCheckAvailable(Object`1 obj)
+   at CSRedis.RedisClientPoolPolicy.PrevReheatConnectionPool(ObjectPool`1 pool, Int32 minPoolSize)
+   --- End of inner exception stack trace ---
+   at CSRedis.Internal.ObjectPool.ObjectPool`1.getFree(Boolean checkAvailable)
+   at CSRedis.Internal.ObjectPool.ObjectPool`1.GetAsync()
+   at CSRedis.CSRedisClient.GetClientAsync(RedisClientPool pool)
+   at CSRedis.CSRedisClient.GetAndExecuteAsync[T](RedisClientPool pool, Func`2 handerAsync, Int32 jump, Int32 errtimes)
+   at CSRedis.CSRedisClient.ExecuteScalarAsync[T](String key, Func`3 handerAsync)
+   at Microsoft.Extensions.Caching.Redis.CSRedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at AspNetCoreRateLimit.DistributedCacheIpPolicyStore.SeedAsync()
+   at Memoyu.Web.Program.Main(String[] args) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web\Program.cs:line 48
+2020-12-27 19:46:57.066 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 19:46:57.068 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 19:46:57.069 +08:00 [INF] Hosting environment: Development
+2020-12-27 19:46:57.069 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 19:47:00.131 +08:00 [INF] Application is shutting down...
+2020-12-27 19:47:50.538 +08:00 [INF] init main
+2020-12-27 19:47:51.478 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 19:47:51.481 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 19:47:51.481 +08:00 [INF] Hosting environment: Development
+2020-12-27 19:47:51.481 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 19:48:10.659 +08:00 [INF] init main
+2020-12-27 19:48:11.596 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-27 19:48:11.598 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-27 19:48:11.598 +08:00 [INF] Hosting environment: Development
+2020-12-27 19:48:11.599 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-27 19:48:21.071 +08:00 [INF] Application is shutting down...

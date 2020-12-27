@@ -1,0 +1,22 @@
+2020-12-28 00:19:27.760 +08:00 [INF] init main
+2020-12-28 00:19:28.605 +08:00 [FTL] Host terminated unexpectedly
+System.IO.FileNotFoundException: Could not load file or assembly 'Memoyu.Application, Culture=neutral, PublicKeyToken=null'. 系统找不到指定的文件。
+File name: 'Memoyu.Application, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at Memoyu.Extensions.Configuration.ServiceModule.Load(ContainerBuilder builder) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Extensions\Configuration\ServiceModule.cs:line 36
+   at Autofac.Module.Configure(IComponentRegistryBuilder componentRegistry)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProviderFactory.CreateServiceProvider(ContainerBuilder containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Memoyu.Web.Program.Main(String[] args) in D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web\Program.cs:line 41
+2020-12-28 00:20:39.598 +08:00 [INF] init main
+2020-12-28 00:20:40.516 +08:00 [INF] Now listening on: http://localhost:5000
+2020-12-28 00:20:40.518 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-28 00:20:40.518 +08:00 [INF] Hosting environment: Development
+2020-12-28 00:20:40.518 +08:00 [INF] Content root path: D:\template\Memoyu-dotNETCore\Memoyu.Core\src\Memoyu.Web
+2020-12-28 00:20:44.194 +08:00 [INF] Application is shutting down...
