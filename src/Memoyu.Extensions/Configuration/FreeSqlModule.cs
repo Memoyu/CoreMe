@@ -13,8 +13,13 @@ using Autofac;
 using FreeSql;
 using FreeSql.Internal;
 using Memoyu.Extensions.FreeSqlExt;
+using Memoyu.Infrastructure.Common;
+using Memoyu.Infrastructure.Entities;
 using Microsoft.Extensions.Configuration;
+using Serilog;
+using System;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Memoyu.Extensions.Configuration
 {
@@ -40,8 +45,38 @@ namespace Memoyu.Extensions.Configuration
               )
               .CreateDatabaseIfNotExists()
               .Build()
-              .SetDbContextOptions(opt => opt.EnableAddOrUpdateNavigateList = true)//联级保存功能开启（默认为关闭）
-              ;
+              .SetDbContextOptions(opt =>
+              {
+                  opt.EnableAddOrUpdateNavigateList = true;
+                  opt.OnEntityChange = rep =>
+                  {
+                      //进行审计
+                  };
+              });//联级保存功能开启（默认为关闭）
+
+            fsql.Aop.CurdAfter += (s, e) =>
+            {
+                Log.Debug($"ManagedThreadId:{Thread.CurrentThread.ManagedThreadId}: FullName:{e.EntityType.FullName}" + $" ElapsedMilliseconds:{e.ElapsedMilliseconds}ms, {e.Sql}");
+
+                if (e.ElapsedMilliseconds > 200)
+                {
+                    //记录日志
+                    //发送短信给负责人
+                }
+            };
+            builder.RegisterInstance(fsql).SingleInstance();//以FreeSql注册为单例
+            fsql.GlobalFilter.Apply<IDeleteAduitEntity>("IsDeleted", a => a.IsDeleted == false);
+
+            //在运行时直接生成表结构
+            try
+            {
+                fsql.CodeFirst
+                    .SyncStructure(ReflexUtil.GetTypesByTableAttribute());
+            }
+            catch (Exception e)
+            {
+                Log.Logger.Error(e + e.StackTrace + e.Message + e.InnerException);
+            }
         }
 
       
