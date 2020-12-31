@@ -13,6 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Memoyu.Extensions.ServiceExtensions
 {
+    /// <summary>
+    /// 控制器配置注册
+    /// </summary>
     public static class ControllerSetup
     {
         public static IServiceCollection AddController(this IServiceCollection services)

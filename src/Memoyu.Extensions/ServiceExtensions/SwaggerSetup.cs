@@ -17,6 +17,9 @@ using System.Text;
 
 namespace Memoyu.Extensions.ServiceExtensions
 {
+    /// <summary>
+    /// 配置注册Swagger
+    /// </summary>
     public static class SwaggerSetup
     {
         public static IServiceCollection AddSwagger(this IServiceCollection services)

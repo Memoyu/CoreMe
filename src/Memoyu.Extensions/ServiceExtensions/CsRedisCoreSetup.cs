@@ -17,6 +17,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Memoyu.Extensions.ServiceExtensions
 {
+    /// <summary>
+    /// 配置注册CSRedis
+    /// </summary>
     public static class CsRedisCoreSetup
     {
         public static IServiceCollection AddCsRedisCore(this IServiceCollection services, IConfiguration configuration)

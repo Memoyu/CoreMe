@@ -1,18 +1,12 @@
 using Autofac;
 using Memoyu.Extensions.Configuration;
+using Memoyu.Extensions.Middleware.Mid;
 using Memoyu.Extensions.ServiceExtensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Memoyu.Web
 {
@@ -32,6 +26,8 @@ namespace Memoyu.Web
             services.AddController();//ÅäÖÃ×¢²áController
             services.AddSwagger();//ÅäÖÃ×¢²áSwagger
             services.AddCsRedisCore(Configuration);//ÅäÖÃ×¢²áRedis»º´æ
+            services.AddMiniProfilerSetup();//ÅäÖÃ×¢²á¼à¿Ø
+            services.AddHttpContext();//ÅäÖÃ×¢²áHttpContext
             services.AddIpRateLimiting(Configuration);//ÅäÖÃ×¢²áÏÞÁ÷
         }
 
@@ -53,10 +49,18 @@ namespace Memoyu.Web
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Memoyu.Web v1"));
             }
+            // IpÏÞÁ÷
+            app.UseIpLimitMilddleware(Configuration);
+
+            // ¼ÇÂ¼ipÇëÇó
+            app.UseMiddleware<IPLogMilddleware>();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // ÐÔÄÜ·ÖÎö
+            app.UseMiniProfiler();
 
             app.UseEndpoints(endpoints =>
             {

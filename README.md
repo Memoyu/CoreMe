@@ -24,7 +24,7 @@
 |           CAP 分布式事务            |     [dotnetcore/CAP](https://github.com/dotnetcore/CAP)      |
 |         Serilog 结构化日志          |    [serilog/serilog](https://github.com/serilog/serilog)     |
 |          MiniProfiler监控           | [MiniProfiler/dotnet](https://github.com/MiniProfiler/dotnet) |
-|     AspNetCoreRateLimit服务限流     | [stefanprodan/AspNetCoreRateLimit](https://github.com/stefanprodan/AspNetCoreRateLimit) |
+|     AspNetCoreRateLimit IP限流      | [stefanprodan/AspNetCoreRateLimit](https://github.com/stefanprodan/AspNetCoreRateLimit) |
 |         AutoMapper 对象映射         | [AutoMapper/AutoMapper](https://github.com/AutoMapper/AutoMapper) |
 |         CSRedis RedisHelper         |    [2881099/csredis](https://github.com/2881099/csredis)     |
 |        Autofac 依赖注入容器         |    [autofac/Autofac](https://github.com/autofac/Autofac)     |
@@ -41,11 +41,13 @@
 
 - [ ] Serilog结构化日志；
 
+- [ ] SignalR实时通信；
+
 - [ ] FreeSql ORM ；
 
 - [ ] 仓储模式；
 
-- [ ] 浅尝服务限流；
+- [ ] 浅尝IP限流；
 
 - [ ] 浅尝分布式事务；
 
