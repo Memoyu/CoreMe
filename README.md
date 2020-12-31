@@ -15,7 +15,7 @@
 
 作为个人.NET 开发技术的积累、实践合集，将较为常用的技术进行集成，开箱即用。
 
-![技术栈](D:\Profile\Memoyu.Core\.assets\README.assets\技术栈.png)
+![技术栈](https://github.com/Memoyu/Memoyu.Core/blob/master/doc/images/%E6%8A%80%E6%9C%AF%E6%A0%88.png)
 
 |               技术栈                |                           开源地址                           |
 | :---------------------------------: | :----------------------------------------------------------: |
