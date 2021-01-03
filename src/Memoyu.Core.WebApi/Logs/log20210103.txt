@@ -1,0 +1,661 @@
+2021-01-03 16:29:02.986 +08:00 [INF] init main
+2021-01-03 16:29:03.789 +08:00 [FTL] Host terminated unexpectedly
+System.IO.FileNotFoundException: Could not load file or assembly 'Memoyu.Infrastructure, Culture=neutral, PublicKeyToken=null'. 系统找不到指定的文件。
+File name: 'Memoyu.Infrastructure, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at Memoyu.Core.WebApi.Modules.RepositoryModule.Load(ContainerBuilder builder) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Modules\RepositoryModule.cs:line 24
+   at Autofac.Module.Configure(IComponentRegistryBuilder componentRegistry)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProviderFactory.CreateServiceProvider(ContainerBuilder containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Memoyu.Core.WebApi.Program.Main(String[] args) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Program.cs:line 31
+2021-01-03 16:33:03.684 +08:00 [INF] init main
+2021-01-03 16:33:04.895 +08:00 [FTL] IIpPolicyStore RUN Error
+CSRedis.RedisException: NOAUTH Authentication required.
+   at CSRedis.CSRedisClient.GetAndExecuteAsync[T](RedisClientPool pool, Func`2 handerAsync, Int32 jump, Int32 errtimes)
+   at CSRedis.CSRedisClient.ExecuteScalarAsync[T](String key, Func`3 handerAsync)
+   at Microsoft.Extensions.Caching.Redis.CSRedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at AspNetCoreRateLimit.DistributedCacheIpPolicyStore.SeedAsync()
+   at Memoyu.Core.WebApi.Program.Main(String[] args) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Program.cs:line 38
+2021-01-03 16:33:05.078 +08:00 [INF] Starting the processing server.
+2021-01-03 16:33:05.124 +08:00 [INF] ### CAP started!
+2021-01-03 16:33:05.266 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 16:33:05.267 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 16:33:05.268 +08:00 [INF] Hosting environment: Development
+2021-01-03 16:33:05.268 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 16:33:26.699 +08:00 [INF] Application is shutting down...
+2021-01-03 16:33:26.716 +08:00 [INF] Shutting down the processing server...
+2021-01-03 16:33:26.718 +08:00 [INF] ### CAP shutdown!
+2021-01-03 16:34:23.512 +08:00 [INF] init main
+2021-01-03 16:34:24.676 +08:00 [FTL] IIpPolicyStore RUN Error
+CSRedis.RedisException: NOAUTH Authentication required.
+   at CSRedis.CSRedisClient.GetAndExecuteAsync[T](RedisClientPool pool, Func`2 handerAsync, Int32 jump, Int32 errtimes)
+   at CSRedis.CSRedisClient.ExecuteScalarAsync[T](String key, Func`3 handerAsync)
+   at Microsoft.Extensions.Caching.Redis.CSRedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at AspNetCoreRateLimit.DistributedCacheIpPolicyStore.SeedAsync()
+   at Memoyu.Core.WebApi.Program.Main(String[] args) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Program.cs:line 38
+2021-01-03 16:34:24.783 +08:00 [INF] Starting the processing server.
+2021-01-03 16:34:24.830 +08:00 [INF] ### CAP started!
+2021-01-03 16:34:24.968 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 16:34:24.969 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 16:34:24.969 +08:00 [INF] Hosting environment: Development
+2021-01-03 16:34:24.969 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 16:41:12.892 +08:00 [INF] init main
+2021-01-03 16:41:36.648 +08:00 [INF] init main
+2021-01-03 16:41:41.285 +08:00 [INF] Starting the processing server.
+2021-01-03 16:41:41.328 +08:00 [INF] ### CAP started!
+2021-01-03 16:41:41.473 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 16:41:41.475 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 16:41:41.475 +08:00 [INF] Hosting environment: Development
+2021-01-03 16:41:41.475 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 16:42:03.934 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-03 16:42:04.072 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 141.9724ms
+2021-01-03 16:42:13.216 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - -
+2021-01-03 16:42:13.217 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - - - 301 0 - 1.0563ms
+2021-01-03 16:42:13.219 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2021-01-03 16:42:13.262 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 43.1638ms
+2021-01-03 16:42:13.274 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - -
+2021-01-03 16:42:13.275 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - -
+2021-01-03 16:42:13.276 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - -
+2021-01-03 16:42:13.325 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-01-03 16:42:13.325 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-01-03 16:42:13.325 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-01-03 16:42:13.327 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 50.7598ms
+2021-01-03 16:42:13.327 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 51.7313ms
+2021-01-03 16:42:13.327 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - - - 200 142933 text/css 52.7015ms
+2021-01-03 16:42:13.426 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2021-01-03 16:42:13.439 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.6476ms
+2021-01-03 16:42:13.449 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - -
+2021-01-03 16:42:13.450 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-01-03 16:42:13.450 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - - - 200 628 image/png 1.1095ms
+2021-01-03 16:42:19.498 +08:00 [INF] Application is shutting down...
+2021-01-03 16:42:19.537 +08:00 [INF] Shutting down the processing server...
+2021-01-03 16:42:19.538 +08:00 [INF] ### CAP shutdown!
+2021-01-03 17:51:31.346 +08:00 [INF] init main
+2021-01-03 17:51:32.685 +08:00 [INF] Starting the processing server.
+2021-01-03 17:51:32.736 +08:00 [INF] ### CAP started!
+2021-01-03 17:51:32.905 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 17:51:32.906 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 17:51:32.906 +08:00 [INF] Hosting environment: Development
+2021-01-03 17:51:32.907 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 17:51:33.059 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2021-01-03 17:51:33.133 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 77.4270ms
+2021-01-03 17:51:33.307 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2021-01-03 17:51:33.378 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 70.8053ms
+2021-01-03 17:51:57.576 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 53
+2021-01-03 17:51:57.693 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:51:57.725 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:51:57.753 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 53 - 200 0 - 177.3684ms
+2021-01-03 17:52:53.402 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 53
+2021-01-03 17:52:53.413 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:52:53.415 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:52:53.429 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 53 - 200 0 - 26.7356ms
+2021-01-03 17:53:20.316 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 53
+2021-01-03 17:53:20.323 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:53:20.326 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:53:20.340 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 53 - 200 0 - 24.7213ms
+2021-01-03 17:54:03.634 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 53
+2021-01-03 17:55:30.212 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2021-01-03 17:55:50.695 +08:00 [INF] init main
+2021-01-03 17:56:00.652 +08:00 [INF] Starting the processing server.
+2021-01-03 17:56:00.696 +08:00 [INF] ### CAP started!
+2021-01-03 17:56:00.857 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 17:56:00.858 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 17:56:00.858 +08:00 [INF] Hosting environment: Development
+2021-01-03 17:56:00.858 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 17:56:01.272 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2021-01-03 17:56:01.345 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 76.0886ms
+2021-01-03 17:56:01.444 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2021-01-03 17:56:01.470 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - -
+2021-01-03 17:56:01.484 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-01-03 17:56:01.484 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - - - 200 628 image/png 13.6143ms
+2021-01-03 17:56:01.514 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.9305ms
+2021-01-03 17:56:24.578 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 17:56:24.689 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:56:24.718 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 17:56:24.742 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 164.6152ms
+2021-01-03 18:00:31.074 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:00:47.333 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:00:47.334 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:00:47.348 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 16275.2428ms
+2021-01-03 18:01:03.335 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:01:03.341 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:01:03.342 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:01:03.356 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 21.0324ms
+2021-01-03 18:05:43.398 +08:00 [INF] init main
+2021-01-03 18:05:44.643 +08:00 [INF] Starting the processing server.
+2021-01-03 18:05:44.692 +08:00 [INF] ### CAP started!
+2021-01-03 18:05:44.856 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:05:44.857 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:05:44.858 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:05:44.858 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:05:50.277 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:05:50.410 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:05:50.442 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:05:50.478 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 204.8176ms
+2021-01-03 18:07:48.772 +08:00 [INF] init main
+2021-01-03 18:07:49.991 +08:00 [INF] Starting the processing server.
+2021-01-03 18:07:50.035 +08:00 [INF] ### CAP started!
+2021-01-03 18:07:50.182 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:07:50.183 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:07:50.183 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:07:50.183 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:08:02.956 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:08:03.074 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:08:03.101 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:08:03.134 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 178.8732ms
+2021-01-03 18:09:44.892 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:09:44.902 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:09:44.904 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:09:44.919 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 27.0607ms
+2021-01-03 18:11:33.427 +08:00 [INF] init main
+2021-01-03 18:11:42.542 +08:00 [INF] Starting the processing server.
+2021-01-03 18:11:42.587 +08:00 [INF] ### CAP started!
+2021-01-03 18:11:42.763 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:11:42.764 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:11:42.764 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:11:42.764 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:11:43.970 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:11:44.052 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:11:44.081 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:11:44.111 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 144.4183ms
+2021-01-03 18:11:57.849 +08:00 [INF] init main
+2021-01-03 18:11:59.019 +08:00 [INF] Starting the processing server.
+2021-01-03 18:11:59.067 +08:00 [INF] ### CAP started!
+2021-01-03 18:11:59.218 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:11:59.219 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:11:59.219 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:11:59.219 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:12:01.421 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:12:01.477 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:12:01.503 +08:00 [INF] Route matched with {action = "Create", controller = "Test"}. Executing controller action with signature System.Threading.Tasks.Task`1[Memoyu.Core.ToolKits.Base.ServiceResult] CreateAsync(Memoyu.Core.Application.Contracts.Test.ModifyTestDto) on controller Memoyu.Core.WebApi.Controllers.Test.TestController (Memoyu.Core.WebApi).
+2021-01-03 18:12:01.512 +08:00 [INF] Executed action Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi) in 5.3764ms
+2021-01-03 18:12:01.515 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:12:01.519 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'Memoyu.Core.Domain.Repositories.TestRepository' can be invoked with the available services and parameters:
+Cannot resolve parameter 'FreeSql.UnitOfWorkManager unitOfWorkManager' of constructor 'Void .ctor(FreeSql.UnitOfWorkManager, Memoyu.Core.Domain.Shared.Security.ICurrentUser)'.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.GetAllBindings(ConstructorBinder[] availableConstructors, IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.<ConfigurePipeline>b__11_0(ResolveRequestContext ctxt, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DelegateMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.RegistrationPipelineInvokeMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.<>c__DisplayClass5_0.<Execute>b__0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid primaryId, Nullable`1 qualifyingId, Func`1 creator)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext ctxt)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext ctxt)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveOptionalService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method433(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 103
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 18:12:01.587 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 169.3600ms
+2021-01-03 18:14:58.850 +08:00 [INF] init main
+2021-01-03 18:15:00.163 +08:00 [INF] Starting the processing server.
+2021-01-03 18:15:00.208 +08:00 [INF] ### CAP started!
+2021-01-03 18:15:00.382 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:15:00.383 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:15:00.383 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:15:00.383 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:17:24.489 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:17:38.498 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:17:38.529 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:17:56.963 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 0 - 32477.2426ms
+2021-01-03 18:18:19.773 +08:00 [INF] init main
+2021-01-03 18:18:21.099 +08:00 [INF] Starting the processing server.
+2021-01-03 18:18:21.144 +08:00 [INF] ### CAP started!
+2021-01-03 18:18:21.304 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:18:21.305 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:18:21.305 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:18:21.305 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:18:21.715 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:18:21.850 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:18:21.880 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:22:00.184 +08:00 [INF] init main
+2021-01-03 18:22:01.559 +08:00 [INF] Starting the processing server.
+2021-01-03 18:22:01.606 +08:00 [INF] ### CAP started!
+2021-01-03 18:22:01.768 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:22:01.769 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:22:01.769 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:22:01.770 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:22:23.520 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 18:22:23.659 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:22:23.689 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 18:22:23.735 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 记录请求IP异常：An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+   at Memoyu.Core.WebApi.Middleware.IPLogMilddleware.InvokeAsync(HttpContext context) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Middleware\IPLogMilddleware.cs:line 74
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 18:22:23.786 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 269.3485ms
+2021-01-03 18:24:25.099 +08:00 [INF] init main
+2021-01-03 18:25:31.461 +08:00 [INF] init main
+2021-01-03 18:26:12.942 +08:00 [INF] Starting the processing server.
+2021-01-03 18:26:12.990 +08:00 [INF] ### CAP started!
+2021-01-03 18:26:13.160 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 18:26:13.161 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 18:26:13.162 +08:00 [INF] Hosting environment: Development
+2021-01-03 18:26:13.162 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 18:26:22.309 +08:00 [INF] init main
+2021-01-03 20:00:38.107 +08:00 [INF] init main
+2021-01-03 20:00:47.703 +08:00 [INF] Starting the processing server.
+2021-01-03 20:00:47.749 +08:00 [INF] ### CAP started!
+2021-01-03 20:00:47.920 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:00:47.921 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:00:47.922 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:00:47.922 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:00:50.608 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:00:50.740 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:00:50.769 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:00:50.814 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 记录请求IP异常：An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+   at Memoyu.Core.WebApi.Middleware.IPLogMilddleware.InvokeAsync(HttpContext context) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Middleware\IPLogMilddleware.cs:line 74
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 20:00:50.861 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 256.3083ms
+2021-01-03 20:04:33.024 +08:00 [INF] init main
+2021-01-03 20:04:34.335 +08:00 [INF] Starting the processing server.
+2021-01-03 20:04:34.381 +08:00 [INF] ### CAP started!
+2021-01-03 20:04:34.550 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:04:34.551 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:04:34.551 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:04:34.552 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:04:39.008 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:04:39.143 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:04:39.175 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:04:39.218 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 记录请求IP异常：An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+   at Memoyu.Core.WebApi.Middleware.IPLogMilddleware.InvokeAsync(HttpContext context) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Middleware\IPLogMilddleware.cs:line 74
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 20:04:39.266 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 261.3863ms
+2021-01-03 20:06:30.937 +08:00 [INF] init main
+2021-01-03 20:06:32.257 +08:00 [INF] Starting the processing server.
+2021-01-03 20:06:32.302 +08:00 [INF] ### CAP started!
+2021-01-03 20:06:32.475 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:06:32.476 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:06:32.476 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:06:32.477 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:06:35.662 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:06:35.790 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:06:35.822 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:06:35.869 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 记录请求IP异常：An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+   at Memoyu.Core.WebApi.Middleware.IPLogMilddleware.InvokeAsync(HttpContext context) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Middleware\IPLogMilddleware.cs:line 74
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 20:06:35.919 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 261.2853ms
+2021-01-03 20:07:13.906 +08:00 [INF] init main
+2021-01-03 20:07:15.177 +08:00 [INF] Starting the processing server.
+2021-01-03 20:07:15.226 +08:00 [INF] ### CAP started!
+2021-01-03 20:07:15.422 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:07:15.423 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:07:15.423 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:07:15.424 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:07:17.153 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:07:17.288 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:07:17.322 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:07:17.375 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 记录请求IP异常：An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+   at Memoyu.Core.WebApi.Middleware.IPLogMilddleware.InvokeAsync(HttpContext context) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Middleware\IPLogMilddleware.cs:line 74
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 20:07:17.427 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 277.9048ms
+2021-01-03 20:07:53.512 +08:00 [INF] init main
+2021-01-03 20:07:54.747 +08:00 [INF] Starting the processing server.
+2021-01-03 20:07:54.799 +08:00 [INF] ### CAP started!
+2021-01-03 20:07:54.975 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:07:54.977 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:07:54.977 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:07:54.977 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:07:57.340 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:07:57.472 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:07:57.502 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:07:57.546 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 记录请求IP异常：An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+   at Memoyu.Core.WebApi.Middleware.IPLogMilddleware.InvokeAsync(HttpContext context) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Middleware\IPLogMilddleware.cs:line 74
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 20:07:57.596 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 259.8695ms
+2021-01-03 20:08:31.305 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:08:31.316 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:08:31.317 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:08:31.345 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 记录请求IP异常：An exception was thrown while activating Memoyu.Application.Test.Impl.TestService -> Memoyu.Core.Domain.Repositories.TestRepository.
+   at Memoyu.Core.WebApi.Middleware.IPLogMilddleware.InvokeAsync(HttpContext context) in D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi\Middleware\IPLogMilddleware.cs:line 74
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-01-03 20:08:31.346 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - text/plain 41.4918ms
+2021-01-03 20:10:34.013 +08:00 [INF] init main
+2021-01-03 20:10:35.365 +08:00 [INF] Starting the processing server.
+2021-01-03 20:10:35.416 +08:00 [INF] ### CAP started!
+2021-01-03 20:10:35.616 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:10:35.617 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:10:35.618 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:10:35.618 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:10:43.436 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:10:43.571 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:12:30.999 +08:00 [INF] init main
+2021-01-03 20:12:32.360 +08:00 [INF] Starting the processing server.
+2021-01-03 20:12:32.412 +08:00 [INF] ### CAP started!
+2021-01-03 20:12:32.616 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:12:32.618 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:12:32.618 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:12:32.618 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:12:34.126 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:12:34.260 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:12:38.861 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:12:38.874 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 4751.4824ms
+2021-01-03 20:13:25.557 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:13:25.565 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:13:25.602 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:13:25.604 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 46.8568ms
+2021-01-03 20:14:11.640 +08:00 [INF] init main
+2021-01-03 20:14:12.845 +08:00 [INF] Starting the processing server.
+2021-01-03 20:14:12.893 +08:00 [INF] ### CAP started!
+2021-01-03 20:14:13.060 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:14:13.061 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:14:13.062 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:14:13.062 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:14:14.343 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:14:14.475 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:14:14.865 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:14:14.877 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 537.7586ms
+2021-01-03 20:14:24.554 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:14:24.558 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:16:34.162 +08:00 [INF] init main
+2021-01-03 20:16:35.546 +08:00 [INF] Starting the processing server.
+2021-01-03 20:16:35.598 +08:00 [INF] ### CAP started!
+2021-01-03 20:16:35.820 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:16:35.822 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:16:35.822 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:16:35.822 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:17:24.197 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:17:24.331 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:20:44.327 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:20:44.339 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 200144.6647ms
+2021-01-03 20:25:58.068 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:25:58.075 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:26:20.766 +08:00 [INF] init main
+2021-01-03 20:26:22.047 +08:00 [INF] Starting the processing server.
+2021-01-03 20:26:22.112 +08:00 [INF] ### CAP started!
+2021-01-03 20:26:22.298 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:26:22.299 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:26:22.300 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:26:22.300 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:26:30.984 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:26:31.113 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:30:27.745 +08:00 [INF] init main
+2021-01-03 20:30:28.945 +08:00 [INF] Starting the processing server.
+2021-01-03 20:30:28.993 +08:00 [INF] ### CAP started!
+2021-01-03 20:30:29.175 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:30:29.176 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:30:29.176 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:30:29.176 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:30:36.717 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:30:36.852 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:30:39.965 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:30:39.976 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 3262.7418ms
+2021-01-03 20:33:37.350 +08:00 [INF] init main
+2021-01-03 20:33:54.969 +08:00 [INF] init main
+2021-01-03 20:34:04.454 +08:00 [INF] Starting the processing server.
+2021-01-03 20:34:04.497 +08:00 [INF] ### CAP started!
+2021-01-03 20:34:04.655 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:34:04.656 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:34:04.657 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:34:04.657 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:34:08.028 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:34:08.160 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:34:08.569 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:34:08.583 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 557.4419ms
+2021-01-03 20:40:38.698 +08:00 [INF] init main
+2021-01-03 20:40:40.013 +08:00 [INF] Starting the processing server.
+2021-01-03 20:40:40.066 +08:00 [INF] ### CAP started!
+2021-01-03 20:40:40.247 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 20:40:40.248 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 20:40:40.249 +08:00 [INF] Hosting environment: Development
+2021-01-03 20:40:40.249 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 20:41:29.183 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:41:29.320 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:41:29.727 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:41:35.997 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 6817.3986ms
+2021-01-03 20:42:18.756 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:42:18.766 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:42:18.822 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:42:27.194 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 8435.8539ms
+2021-01-03 20:49:29.322 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 20:49:29.331 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:49:29.390 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 20:49:29.390 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 - application/json;+charset=utf-8 68.5551ms
+2021-01-03 20:50:07.588 +08:00 [INF] Application is shutting down...
+2021-01-03 20:50:07.628 +08:00 [INF] Shutting down the processing server...
+2021-01-03 20:50:07.629 +08:00 [INF] ### CAP shutdown!
+2021-01-03 21:19:10.019 +08:00 [INF] init main
+2021-01-03 21:19:11.407 +08:00 [INF] Starting the processing server.
+2021-01-03 21:19:11.466 +08:00 [INF] ### CAP started!
+2021-01-03 21:19:11.657 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:19:11.658 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:19:11.658 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:19:11.658 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:25:30.564 +08:00 [INF] init main
+2021-01-03 21:25:31.917 +08:00 [INF] Starting the processing server.
+2021-01-03 21:25:31.967 +08:00 [INF] ### CAP started!
+2021-01-03 21:25:32.150 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:25:32.151 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:25:32.151 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:25:32.151 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:25:36.721 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:25:36.857 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:25:37.258 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:25:37.271 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 553.3578ms
+2021-01-03 21:25:59.274 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:25:59.281 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:25:59.340 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:25:59.342 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 68.2561ms
+2021-01-03 21:27:07.437 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:27:07.449 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:29:19.601 +08:00 [INF] init main
+2021-01-03 21:29:20.976 +08:00 [INF] Starting the processing server.
+2021-01-03 21:29:21.028 +08:00 [INF] ### CAP started!
+2021-01-03 21:29:21.197 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:29:21.199 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:29:21.199 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:29:21.199 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:29:28.546 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:29:28.682 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:31:51.148 +08:00 [INF] init main
+2021-01-03 21:31:52.579 +08:00 [INF] Starting the processing server.
+2021-01-03 21:31:52.639 +08:00 [INF] ### CAP started!
+2021-01-03 21:31:52.850 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:31:52.851 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:31:52.852 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:31:52.852 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:31:57.667 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:31:57.803 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:32:00.438 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:32:00.451 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 2786.6460ms
+2021-01-03 21:36:52.317 +08:00 [INF] init main
+2021-01-03 21:36:53.570 +08:00 [INF] Starting the processing server.
+2021-01-03 21:36:53.621 +08:00 [INF] ### CAP started!
+2021-01-03 21:36:53.787 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:36:53.788 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:36:53.788 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:36:53.788 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:37:05.678 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:37:05.808 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:40:32.430 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:40:32.438 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:40:38.022 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:40:38.022 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:40:38.036 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 5604.6318ms
+2021-01-03 21:40:38.036 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 212360.9650ms
+2021-01-03 21:40:40.212 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:40:40.215 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:42:26.027 +08:00 [INF] init main
+2021-01-03 21:42:27.457 +08:00 [INF] Starting the processing server.
+2021-01-03 21:42:27.506 +08:00 [INF] ### CAP started!
+2021-01-03 21:42:27.692 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:42:27.694 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:42:27.695 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:42:27.695 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:42:28.930 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:42:29.065 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:42:38.715 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:42:38.727 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 9800.3184ms
+2021-01-03 21:50:53.284 +08:00 [INF] init main
+2021-01-03 21:50:54.690 +08:00 [INF] Starting the processing server.
+2021-01-03 21:50:54.752 +08:00 [INF] ### CAP started!
+2021-01-03 21:50:54.929 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:50:54.930 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:50:54.930 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:50:54.931 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:50:57.269 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 50
+2021-01-03 21:50:57.408 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:50:57.588 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:50:57.602 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 50 - 400 139 application/json;+charset=utf-8 337.3318ms
+2021-01-03 21:52:12.769 +08:00 [INF] init main
+2021-01-03 21:52:14.187 +08:00 [INF] Starting the processing server.
+2021-01-03 21:52:14.238 +08:00 [INF] ### CAP started!
+2021-01-03 21:52:14.456 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 21:52:14.457 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 21:52:14.457 +08:00 [INF] Hosting environment: Development
+2021-01-03 21:52:14.458 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 21:52:17.660 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 50
+2021-01-03 21:52:17.802 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:52:17.993 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:52:18.007 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 50 - 400 105 application/json;+charset=utf-8 350.1431ms
+2021-01-03 21:52:28.855 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 21:52:28.859 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:52:40.336 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 21:52:40.339 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 11484.8294ms
+2021-01-03 22:19:24.451 +08:00 [INF] init main
+2021-01-03 22:19:25.787 +08:00 [INF] Starting the processing server.
+2021-01-03 22:19:25.835 +08:00 [INF] ### CAP started!
+2021-01-03 22:19:25.998 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 22:19:25.999 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 22:19:26.000 +08:00 [INF] Hosting environment: Development
+2021-01-03 22:19:26.000 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 22:19:26.642 +08:00 [INF] Application is shutting down...
+2021-01-03 22:19:26.680 +08:00 [INF] Shutting down the processing server...
+2021-01-03 22:19:26.682 +08:00 [INF] ### CAP shutdown!
+2021-01-03 22:19:56.213 +08:00 [INF] init main
+2021-01-03 22:19:57.474 +08:00 [INF] Starting the processing server.
+2021-01-03 22:19:57.527 +08:00 [INF] ### CAP started!
+2021-01-03 22:19:57.723 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 22:19:57.724 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 22:19:57.725 +08:00 [INF] Hosting environment: Development
+2021-01-03 22:19:57.725 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 22:20:01.143 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 22:20:01.271 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:20:10.456 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:20:10.468 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 400 - application/json 9327.9661ms
+2021-01-03 22:20:54.364 +08:00 [INF] init main
+2021-01-03 22:20:55.634 +08:00 [INF] Starting the processing server.
+2021-01-03 22:20:55.682 +08:00 [INF] ### CAP started!
+2021-01-03 22:20:55.863 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 22:20:55.864 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 22:20:55.864 +08:00 [INF] Hosting environment: Development
+2021-01-03 22:20:55.864 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 22:21:01.584 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 22:21:01.713 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:21:06.545 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:21:06.557 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - application/json 4975.9543ms
+2021-01-03 22:25:06.699 +08:00 [INF] init main
+2021-01-03 22:25:08.022 +08:00 [INF] Starting the processing server.
+2021-01-03 22:25:08.067 +08:00 [INF] ### CAP started!
+2021-01-03 22:25:08.237 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 22:25:08.238 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 22:25:08.238 +08:00 [INF] Hosting environment: Development
+2021-01-03 22:25:08.238 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 22:25:12.272 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 22:25:12.406 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:25:12.885 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:25:12.897 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - application/json 627.9948ms
+2021-01-03 22:25:54.665 +08:00 [INF] init main
+2021-01-03 22:25:55.897 +08:00 [INF] Starting the processing server.
+2021-01-03 22:25:55.946 +08:00 [INF] ### CAP started!
+2021-01-03 22:25:56.150 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 22:25:56.151 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 22:25:56.151 +08:00 [INF] Hosting environment: Development
+2021-01-03 22:25:56.151 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 22:26:02.455 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 22:26:02.582 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:26:03.052 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:26:03.065 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - application/json 612.9762ms
+2021-01-03 22:28:07.775 +08:00 [INF] init main
+2021-01-03 22:28:09.006 +08:00 [INF] Starting the processing server.
+2021-01-03 22:28:09.059 +08:00 [INF] ### CAP started!
+2021-01-03 22:28:09.240 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 22:28:09.242 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 22:28:09.242 +08:00 [INF] Hosting environment: Development
+2021-01-03 22:28:09.242 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 22:28:10.866 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 22:28:11.003 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:28:11.436 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:28:11.448 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 200 85 application/json;+charset=utf-8 585.2762ms
+2021-01-03 22:28:13.142 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 22:28:13.146 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:28:13.260 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:28:13.262 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 500 - application/json 119.4719ms
+2021-01-03 22:30:19.615 +08:00 [INF] init main
+2021-01-03 22:30:20.962 +08:00 [INF] Starting the processing server.
+2021-01-03 22:30:21.018 +08:00 [INF] ### CAP started!
+2021-01-03 22:30:21.288 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-03 22:30:21.290 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-03 22:30:21.290 +08:00 [INF] Hosting environment: Development
+2021-01-03 22:30:21.290 +08:00 [INF] Content root path: D:\template\LikeAbp\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-03 22:30:32.396 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Test application/json 51
+2021-01-03 22:30:32.530 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:30:32.890 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync (Memoyu.Core.WebApi)'
+2021-01-03 22:30:32.901 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Test application/json 51 - 400 - application/json 508.2960ms
