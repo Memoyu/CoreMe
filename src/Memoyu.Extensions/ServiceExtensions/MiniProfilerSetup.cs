@@ -8,7 +8,7 @@ namespace Memoyu.Extensions.ServiceExtensions
     /// </summary>
     public static class MiniProfilerSetup
     {
-        public static void AddMiniProfilerSetup(this IServiceCollection services)
+        public static void AddMiniProfiler(this IServiceCollection services)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 

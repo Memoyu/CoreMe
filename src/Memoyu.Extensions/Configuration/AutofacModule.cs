@@ -10,11 +10,8 @@
 *   功能描述 ：
 ***************************************************************************/
 using Autofac;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Memoyu.Extensions.Configuration
 {
@@ -27,6 +24,7 @@ namespace Memoyu.Extensions.Configuration
         }
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().SingleInstance();
         }
     }
 }

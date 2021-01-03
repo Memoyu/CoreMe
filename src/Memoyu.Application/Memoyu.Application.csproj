@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Memoyu.Application.Contracts\Memoyu.Application.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

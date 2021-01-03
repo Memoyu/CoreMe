@@ -15,13 +15,9 @@ using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 using Serilog;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Memoyu.Extensions.FreeSqlExt
 {

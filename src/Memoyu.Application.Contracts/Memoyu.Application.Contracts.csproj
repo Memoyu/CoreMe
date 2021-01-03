@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Memoyu.Core\Memoyu.Core.csproj" />
+    <ProjectReference Include="..\Memoyu.Infrastructure\Memoyu.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
