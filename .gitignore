@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+!.template/*.nupkg
+!Memoyu.Core.WebApi.Template.*.nupkg
