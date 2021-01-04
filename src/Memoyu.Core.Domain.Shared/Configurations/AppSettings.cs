@@ -82,6 +82,11 @@ namespace Memoyu.Core.Domain.Shared.Configurations
         #region CAP
 
         /// <summary>
+        /// Cap默认存储表前缀
+        /// </summary>
+        public static string CapStorageTablePrefix => _configuration["CAP:TableNamePrefix"];
+
+        /// <summary>
         /// Cap默认存储
         /// </summary>
         public static string CapDefaultStorage => _configuration["CAP:DefaultStorage"];

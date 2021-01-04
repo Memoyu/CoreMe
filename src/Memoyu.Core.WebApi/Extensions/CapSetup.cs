@@ -75,7 +75,11 @@ namespace Memoyu.Core.WebApi.Extensions
                         options.UseInMemoryStorage();
                         break;
                     case CapStorageTypeEnums.Mysql:
-                        options.UseMySql(AppSettings.MySqlCon);
+                        options.UseMySql(opt=> 
+                        {
+                            opt.ConnectionString = AppSettings.MySqlCon;
+                            opt.TableNamePrefix = AppSettings.CapStorageTablePrefix;
+                        });
                         break;
                     default:
                         break;

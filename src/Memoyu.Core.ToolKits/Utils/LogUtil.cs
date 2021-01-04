@@ -29,7 +29,7 @@ namespace Memoyu.Core.ToolKits.Utils
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
-                .WriteTo.File(Path.Combine($"log/Serilog/", $"{filename}.log"), rollingInterval: RollingInterval.Infinite, outputTemplate: "{Message}{NewLine}{Exception}")
+                .WriteTo.File(Path.Combine($"Logs/Serilog/", $"{filename}.log"), rollingInterval: RollingInterval.Infinite, outputTemplate: "{Message}{NewLine}{Exception}")
                 .CreateLogger();
 
             var now = DateTime.Now;
