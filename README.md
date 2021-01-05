@@ -11,7 +11,7 @@
 
 &nbsp;
 
-知行合一
+**知行合一**
 
 [![.NET5](https://img.shields.io/badge/.NET5.0.0-3963bc.svg)](https://dotnet.microsoft.com/download)
 [![](https://img.shields.io/badge/license-MIT-3963bc.svg)](LICENSE)
