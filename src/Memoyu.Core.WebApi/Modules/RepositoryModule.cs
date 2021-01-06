@@ -10,8 +10,8 @@
 *   功能描述 ：
 ***************************************************************************/
 using Autofac;
-using Memoyu.Core.Domain.Shared.Base;
-using Memoyu.Core.Domain.Shared.Base.Impl;
+using Memoyu.Core.Domain.Base;
+using Memoyu.Core.Domain.Base.Impl;
 using System.Reflection;
 
 namespace Memoyu.Core.WebApi.Modules

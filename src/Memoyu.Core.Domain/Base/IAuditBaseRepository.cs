@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Core.Domain.Shared.Base
+*   命名空间 ：Memoyu.Core.Domain.Base
 *   文件名称 ：IAuditBaseRepository.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -12,7 +12,7 @@
 using FreeSql;
 using System;
 
-namespace Memoyu.Core.Domain.Shared.Base
+namespace Memoyu.Core.Domain.Base
 {
     public interface IAuditBaseRepository<TEntity> : IBaseRepository<TEntity, Guid> where TEntity : class
     {

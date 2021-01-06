@@ -10,7 +10,7 @@
 *   功能描述 ：
 ***************************************************************************/
 using FreeSql.DataAnnotations;
-using Memoyu.Core.Domain.Shared.Base;
+using Memoyu.Core.Domain.Base;
 using System;
 
 namespace Memoyu.Core.Domain.Entities

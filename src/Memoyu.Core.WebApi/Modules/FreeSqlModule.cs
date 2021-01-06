@@ -12,7 +12,7 @@
 using Autofac;
 using FreeSql;
 using FreeSql.Internal;
-using Memoyu.Core.Domain.Shared.Base;
+using Memoyu.Core.Domain.Base;
 using Memoyu.Core.Domain.Shared.Configurations;
 using Memoyu.Core.Domain.Shared.Extensions;
 using Serilog;
@@ -60,6 +60,16 @@ namespace Memoyu.Core.WebApi.Modules
             builder.RegisterInstance(fsql).SingleInstance();//FreeSql注册为单例
             builder.RegisterType(typeof(UnitOfWorkManager)).InstancePerLifetimeScope();//工作单元注册为scope
             fsql.GlobalFilter.Apply<IDeleteAduitEntity>("IsDeleted", a => a.IsDeleted == false);
+
+            try
+            {
+                using var objPool = fsql.Ado.MasterPool.Get();
+            }
+            catch (Exception e)
+            {
+                Log.Logger.Error(e + e.StackTrace + e.Message + e.InnerException);
+                return;
+            }
 
             //在运行时直接生成表结构
             try
