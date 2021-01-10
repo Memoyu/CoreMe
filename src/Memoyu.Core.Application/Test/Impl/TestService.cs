@@ -10,13 +10,13 @@
 *   功能描述 ：
 ***************************************************************************/
 using Memoyu.Core.Application.Base.Impl;
-using Memoyu.Core.Application.Contracts.Test;
-using Memoyu.Core.Domain.Entities;
 using Memoyu.Core.Domain.Base;
-using Memoyu.Core.Domain.Shared.Exceptions;
 using Memoyu.Core.ToolKits.Base.Page;
 using System;
 using System.Threading.Tasks;
+using Memoyu.Core.Application.Contracts.Exceptions;
+using Memoyu.Core.Application.Contracts.Dtos.Test;
+using Memoyu.Core.Domain.Entities.Test;
 
 namespace Memoyu.Application.Test.Impl
 {

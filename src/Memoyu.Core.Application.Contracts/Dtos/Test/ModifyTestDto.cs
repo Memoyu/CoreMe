@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Core.Application.Contracts.Test
+*   命名空间 ：Memoyu.Core.Application.Contracts.Dtos.Test
 *   文件名称 ：ModifyTestDto.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -12,7 +12,7 @@
 using Memoyu.Core.Application.Contracts.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Memoyu.Core.Application.Contracts.Test
+namespace Memoyu.Core.Application.Contracts.Dtos.Test
 {
     public class ModifyTestDto
     {

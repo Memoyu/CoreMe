@@ -9,7 +9,7 @@
 *   邮箱     ：mmy6076@outlook.com
 *   功能描述 ：
 ***************************************************************************/
-using Memoyu.Core.Domain.Shared.Exceptions;
+using Memoyu.Core.Application.Contracts.Exceptions;
 using Memoyu.Core.ToolKits.Base;
 using Memoyu.Core.ToolKits.Base.Enum.Base;
 using Microsoft.AspNetCore.Hosting;

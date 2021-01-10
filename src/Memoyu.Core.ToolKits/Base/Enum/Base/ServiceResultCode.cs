@@ -30,9 +30,14 @@ namespace Memoyu.Core.ToolKits.Base.Enum.Base
         Failed = 1,
 
         /// <summary>
-        /// 失败未授权
+        /// 认证失败
         /// </summary>
-        UnAuth = 2,
+        AuthenticationFailed = 10000,
+
+        /// <summary>
+        /// 无权限
+        /// </summary>
+        NoPermission = 10001,
 
         /// <summary>
         /// 未知错误

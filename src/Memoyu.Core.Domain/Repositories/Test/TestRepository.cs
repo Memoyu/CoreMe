@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Infrastructure.Repositories
+*   命名空间 ：Memoyu.Infrastructure.Repositories.Test
 *   文件名称 ：TestRepository.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -10,12 +10,12 @@
 *   功能描述 ：
 ***************************************************************************/
 using FreeSql;
-using Memoyu.Core.Domain.Entities;
-using Memoyu.Core.Domain.IRepositories;
 using Memoyu.Core.Domain.Base.Impl;
 using Memoyu.Core.Domain.Shared.Security;
+using Memoyu.Core.Domain.Entities.Test;
+using Memoyu.Core.Domain.IRepositories.Test;
 
-namespace Memoyu.Core.Domain.Repositories
+namespace Memoyu.Core.Domain.Repositories.Test
 {
     public class TestRepository : AuditBaseRepository<TestEntity>, ITestRepository
     {

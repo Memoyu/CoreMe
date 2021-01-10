@@ -8,4 +8,9 @@
     <ProjectReference Include="..\Memoyu.Core.Application.Contracts\Memoyu.Core.Application.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="User\" />
+  </ItemGroup>
+
 </Project>

@@ -10,7 +10,8 @@
 *   功能描述 ：
 ***************************************************************************/
 using Memoyu.Application.Test;
-using Memoyu.Core.Application.Contracts.Test;
+using Memoyu.Core.Application.Contracts.Dtos.Test;
+using Memoyu.Core.Domain.Shared.Const;
 using Memoyu.Core.ToolKits.Base;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace Memoyu.Core.WebApi.Controllers.Test
     /// 演示控制器
     /// </summary>
     [Route("api/Test")]
+    [ApiExplorerSettings(GroupName = SystemConst.Grouping.GroupName_v2)]
     public class TestController : ApiControllerBase
     {
         private readonly ITestService _testService;
@@ -35,7 +37,7 @@ namespace Memoyu.Core.WebApi.Controllers.Test
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<ServiceResult> CreateAsync([FromBody] ModifyTestDto dto)
         {
             var reponse = new ServiceResult();

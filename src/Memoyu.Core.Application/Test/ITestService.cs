@@ -9,7 +9,7 @@
 *   邮箱     ：mmy6076@outlook.com
 *   功能描述 ：
 ***************************************************************************/
-using Memoyu.Core.Application.Contracts.Test;
+using Memoyu.Core.Application.Contracts.Dtos.Test;
 using Memoyu.Core.ToolKits.Base.Page;
 using System;
 using System.Threading.Tasks;

@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Core.Domain.Shared.Exceptions
+*   命名空间 ：Memoyu.Core.Application.Contracts.Exceptions
 *   文件名称 ：KnownException.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -12,7 +12,7 @@
 using Memoyu.Core.ToolKits.Base.Enum.Base;
 using System;
 
-namespace Memoyu.Core.Domain.Shared.Exceptions
+namespace Memoyu.Core.Application.Contracts.Exceptions
 {
     [Serializable]
     public class KnownException : ApplicationException

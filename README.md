@@ -38,6 +38,7 @@
 |             Autofac 依赖注入容器             |    [autofac/Autofac](https://github.com/autofac/Autofac)     |
 |     Newtonsoft.Json Json序列化/反序列化      | [JamesNK/Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) |
 |           IdentityServer4 身份认证           | [IdentityServer/IdentityServer4](https://github.com/IdentityServer/IdentityServer4) |
+|            Hangfire 后台任务调度             |                                                              |
 |              Docker 容器化部署               |   [jenkinsci/docker](https://github.com/jenkinsci/docker)    |
 |                 整体设计参考                 | [luoyunchong/lin-cms-dotnetcore](https://github.com/luoyunchong/lin-cms-dotnetcore) |
 
@@ -46,6 +47,8 @@
 ## 技术实践：
 
 - [ ] 深究IdentityServer4&权限、角色管理；
+
+- [ ] 深究Hangfire后台任务调度；
 
 - [ ] Serilog结构化日志；
 

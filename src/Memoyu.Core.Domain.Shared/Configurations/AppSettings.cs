@@ -29,9 +29,28 @@ namespace Memoyu.Core.Domain.Shared.Configurations
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
                 .Build();
         }
-        #region Db
 
-        public static IConfiguration Configuration =>_configuration;
+        #region System
+
+        public static IConfiguration Configuration => _configuration;
+
+        /// <summary>
+        /// 接口版本
+        /// </summary>
+        public static string ApiVersion => _configuration["ApiVersion"];
+
+        #endregion
+
+        #region Authentication
+
+        /// <summary>
+        /// 是否开启IdentityServer4
+        /// </summary>
+        public static bool IdentityServer4Enable => Convert.ToBoolean(_configuration["Service:UseIdentityServer4"]);
+
+        #endregion
+
+        #region Db
 
         /// <summary>
         /// 获取配置默认Db Code

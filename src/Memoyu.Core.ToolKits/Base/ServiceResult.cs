@@ -19,6 +19,15 @@ namespace Memoyu.Core.ToolKits.Base
     /// </summary>
     public class ServiceResult
     {
+        public ServiceResult()
+        {
+
+        }
+        public ServiceResult(ServiceResultCode code, string message)
+        {
+            Code = code;
+            Message = message;
+        }
         /// <summary>
         /// 响应码
         /// </summary>

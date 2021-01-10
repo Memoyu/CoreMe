@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Infrastructure.Entities
+*   命名空间 ：Memoyu.Infrastructure.Entities.Test
 *   文件名称 ：TestEntity.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -11,14 +11,16 @@
 ***************************************************************************/
 using FreeSql.DataAnnotations;
 using Memoyu.Core.Domain.Base;
+using Memoyu.Core.Domain.Shared.Const;
 using System;
 
-namespace Memoyu.Core.Domain.Entities
+namespace Memoyu.Core.Domain.Entities.Test
 {
     /// <summary>
     /// 实体案例
     /// </summary>
-    [Table(Name = "mbill_test")]
+    [Table(Name = SystemConst.DbTablePrefix + "_test")]
+    [Index("index_test_on_age", "Age", true)]//索引
     public class TestEntity : FullAduitEntity<Guid>
     {
         [Column(StringLength = 10)]

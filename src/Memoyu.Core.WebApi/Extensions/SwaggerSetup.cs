@@ -9,8 +9,14 @@
 *   邮箱     ：mmy6076@outlook.com
 *   功能描述 ：
 ***************************************************************************/
+using Memoyu.Core.WebApi.Aop.Filter;
+using Memoyu.Core.WebApi.Data.Swagger;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Memoyu.Core.WebApi.Extensions
 {
@@ -21,11 +27,35 @@ namespace Memoyu.Core.WebApi.Extensions
     {
         public static IServiceCollection AddSwagger(this IServiceCollection services)
         {
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(opt =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Memoyu.Web", Version = "v1" });
-            });
+                //遍历应用Swagger分组信息
+                ApiInfo.ApiInfos.ForEach(a => opt.SwaggerDoc(a.UrlPrefix, a.OpenApiInfo));
 
+                opt.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Memoyu.Core.WebApi.xml"));
+                opt.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Memoyu.Core.Domain.xml"));
+                opt.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Memoyu.Core.Application.Contracts.xml"));
+
+                #region 小绿锁
+
+                var security = new OpenApiSecurityScheme
+                {
+                    Description = "JWT模式授权，请输入 Bearer {Token} 进行身份验证",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey
+                };
+                opt.AddSecurityDefinition("oauth2", security);
+                opt.AddSecurityRequirement(new OpenApiSecurityRequirement { { security, new List<string>() } });
+                opt.OperationFilter<AddResponseHeadersFilter>();
+                opt.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                opt.OperationFilter<SecurityRequirementsOperationFilter>();
+
+                #endregion
+
+                // 应用Controller的API文档描述信息
+                opt.DocumentFilter<SwaggerDocumentFilter>();
+            });
             return services;
         }
     }

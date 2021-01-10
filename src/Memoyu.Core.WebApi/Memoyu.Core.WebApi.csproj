@@ -4,6 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>.\Memoyu.Core.WebApi.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Logs\**" />
     <Content Remove="Logs\**" />
@@ -27,11 +31,16 @@
     <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
     <PackageReference Include="Savorboard.CAP.InMemoryMessageQueue" Version="3.1.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Memoyu.Core.Application\Memoyu.Core.Application.csproj" />
     <ProjectReference Include="..\Memoyu.Core.BackgroundJobs\Memoyu.Core.BackgroundJobs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Core\" />
   </ItemGroup>
 
 </Project>

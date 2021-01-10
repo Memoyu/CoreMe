@@ -4,8 +4,18 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>.\Memoyu.Core.Domain.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Memoyu.Core.Domain.Shared\Memoyu.Core.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Core\" />
+    <Folder Include="IRepositories\Core\" />
+    <Folder Include="Repositories\Core\" />
   </ItemGroup>
 
 </Project>
