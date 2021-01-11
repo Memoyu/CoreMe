@@ -11,6 +11,8 @@
 ***************************************************************************/
 using Autofac;
 using Autofac.Extras.DynamicProxy;
+using Memoyu.Core.Application.Core.Account;
+using Memoyu.Core.Application.Core.Account.Impl;
 using Memoyu.Core.WebApi.Aop;
 using System;
 using System.Collections.Generic;
@@ -34,14 +36,24 @@ namespace Memoyu.Core.WebApi.Modules
                 typeof(CacheIntercept),
             };
 
+            string[] notIncludes = new string[]
+            {
+                typeof(IdentityServer4Service).Name,
+                typeof(JwtTokenService).Name,
+            };
+
             Assembly servicesDllFile = Assembly.Load("Memoyu.Core.Application");
             builder.RegisterAssemblyTypes(servicesDllFile)
-                .Where(a => a.Name.EndsWith("Service") && !a.IsAbstract && !a.IsInterface && a.IsPublic)//!notIncludes.Where(r => r == a.Name).Any() &&
+                .Where(a => a.Name.EndsWith("Service") && !notIncludes.Where(r => r == a.Name).Any() && !a.IsAbstract && !a.IsInterface && a.IsPublic)//!notIncludes.Where(r => r == a.Name).Any() &&
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope()
                 .PropertiesAutowired()// 属性注入
                 .InterceptedBy(interceptorServiceTypes.ToArray())
                 .EnableInterfaceInterceptors();
+
+            //使用名称进行实现注册
+            builder.RegisterType<IdentityServer4Service>().Named<ITokenService>(typeof(IdentityServer4Service).Name).InstancePerLifetimeScope();
+            builder.RegisterType<JwtTokenService>().Named<ITokenService>(typeof(JwtTokenService).Name).InstancePerLifetimeScope();
         }
     }
 }

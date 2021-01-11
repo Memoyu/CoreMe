@@ -29,6 +29,7 @@ namespace Memoyu.Core.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddController();//配置注册Controller
+            services.AddJwtBearer();//配置Jwt
             services.AddSwagger();//配置注册Swagger
             services.AddCap();//配置CAP
             services.AddAutoMapper();//配置实体映射
@@ -60,9 +61,6 @@ namespace Memoyu.Core.WebApi
             // 记录ip请求
             app.UseMiddleware<IPLogMilddleware>();
 
-
-            app.UseRouting();
-
             ////异常处理中间件
             //app.UseMiddleware<ExceptionHandlerMiddleware>();
 
@@ -71,11 +69,13 @@ namespace Memoyu.Core.WebApi
             // 性能分析
             app.UseMiniProfiler();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-                endpoints.MapHealthChecks("/health");
-            });
+            app.UseRouting()
+             .UseAuthorization()
+             .UseEndpoints(endpoints =>
+             {
+                 endpoints.MapControllers();
+                 endpoints.MapHealthChecks("/health");
+             });
         }
     }
 }

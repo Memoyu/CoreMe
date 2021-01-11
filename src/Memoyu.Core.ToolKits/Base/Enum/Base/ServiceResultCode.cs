@@ -29,6 +29,7 @@ namespace Memoyu.Core.ToolKits.Base.Enum.Base
         /// </summary>
         Failed = 1,
 
+        #region Authentication
         /// <summary>
         /// 认证失败
         /// </summary>
@@ -38,6 +39,12 @@ namespace Memoyu.Core.ToolKits.Base.Enum.Base
         /// 无权限
         /// </summary>
         NoPermission = 10001,
+        #endregion
+
+        /// <summary>
+        /// 资源不存在
+        /// </summary>
+        NotFound = 10020,
 
         /// <summary>
         /// 未知错误
@@ -49,5 +56,25 @@ namespace Memoyu.Core.ToolKits.Base.Enum.Base
         /// </summary>
         [Description("参数错误")]
         ParameterError = 10030,
+
+
+
+        #region Token
+        /// <summary>
+        /// 令牌失效
+        /// </summary>
+        [Description("令牌失效")]
+        TokenInvalidation = 10040,
+
+        /// <summary>
+        /// 令牌过期
+        /// </summary>
+        TokenExpired = 10050,
+
+        /// <summary>
+        /// refreshToken异常
+        /// </summary>
+        RefreshTokenError = 10100,
+        #endregion
     }
 }

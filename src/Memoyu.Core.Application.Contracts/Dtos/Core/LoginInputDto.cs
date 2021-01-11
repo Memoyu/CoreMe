@@ -19,7 +19,7 @@ namespace Memoyu.Core.Application.Contracts.Dtos.Core
         /// 登录名
         /// </summary>
         /// <example>
-        /// 用户名：admin
+        /// admin
         /// </example>
         [Required(ErrorMessage = "登录名为必填项")]
         public string Username { get; set; }
@@ -27,7 +27,7 @@ namespace Memoyu.Core.Application.Contracts.Dtos.Core
         /// 密码
         /// </summary>
         /// <example>
-        /// 密码：123456
+        /// 123456
         /// </example>
         [Required(ErrorMessage = "密码为必填项")]
         public string Password { get; set; }

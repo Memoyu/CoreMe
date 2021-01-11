@@ -382,5 +382,39 @@
             JWT 登录，保存生成的随机token值。
             </summary>
         </member>
+        <member name="M:Memoyu.Core.Domain.Entities.User.UserEntity.ChangeLoginStatus(System.String)">
+            <summary>
+            登录后用户状态变化
+            </summary>
+            <param name="refreshToken"></param>
+        </member>
+        <member name="M:Memoyu.Core.Domain.IRepositories.User.IUserRepository.GetUserAsync(System.Linq.Expressions.Expression{System.Func{Memoyu.Core.Domain.Entities.User.UserEntity,System.Boolean}})">
+            <summary>
+            根据条件得到用户信息
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Memoyu.Core.Domain.IRepositories.User.IUserRepository.UpdateLastLoginTimeAsync(System.Int64)">
+            <summary>
+            根据用户Id更新用户的最后登录时间
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Memoyu.Core.Domain.Repositories.User.UserRepository.GetUserAsync(System.Linq.Expressions.Expression{System.Func{Memoyu.Core.Domain.Entities.User.UserEntity,System.Boolean}})">
+            <summary>
+            根据条件得到用户信息
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Memoyu.Core.Domain.Repositories.User.UserRepository.UpdateLastLoginTimeAsync(System.Int64)">
+            <summary>
+            根据用户Id更新用户的最后登录时间
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

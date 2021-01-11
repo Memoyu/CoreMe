@@ -39,8 +39,4 @@
     <ProjectReference Include="..\Memoyu.Core.BackgroundJobs\Memoyu.Core.BackgroundJobs.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Core\" />
-  </ItemGroup>
-
 </Project>

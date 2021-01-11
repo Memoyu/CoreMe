@@ -43,7 +43,7 @@
             登录名
             </summary>
             <example>
-            用户名：admin
+            admin
             </example>
         </member>
         <member name="P:Memoyu.Core.Application.Contracts.Dtos.Core.LoginInputDto.Password">
@@ -51,7 +51,7 @@
             密码
             </summary>
             <example>
-            密码：123456
+            123456
             </example>
         </member>
         <member name="P:Memoyu.Core.Application.Contracts.Dtos.User.ModifyUserDto.Username">

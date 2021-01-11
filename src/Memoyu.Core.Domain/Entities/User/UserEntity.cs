@@ -104,5 +104,15 @@ namespace Memoyu.Core.Domain.Entities.User
         [Navigate("CreateUserId")]
         public virtual ICollection<UserIdentityEntity> UserIdentitys { get; set; }
 
+        /// <summary>
+        /// 登录后用户状态变化
+        /// </summary>
+        /// <param name="refreshToken"></param>
+        public void ChangeLoginStatus(string refreshToken)
+        {
+            LastLoginTime = DateTime.Now;
+            RefreshToken = refreshToken;
+        }
+
     }
 }

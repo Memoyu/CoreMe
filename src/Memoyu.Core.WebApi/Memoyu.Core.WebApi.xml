@@ -29,6 +29,25 @@
             <param name="invocation"></param>
         </member>
         <!-- Badly formed XML comment ignored for member "M:Memoyu.Core.WebApi.Aop.UnitOfWorkAsyncInterceptor.InterceptAsynchronous``1(Castle.DynamicProxy.IInvocation)" -->
+        <member name="T:Memoyu.Core.WebApi.Controllers.Core.AccountController">
+            <summary>
+            账户相关
+            </summary>
+        </member>
+        <member name="M:Memoyu.Core.WebApi.Controllers.Core.AccountController.Login(Memoyu.Core.Application.Contracts.Dtos.Core.LoginInputDto)">
+             <summary>
+             登录接口
+             </summary>
+            <example>
+             用户名：admin，密码：123456
+             </example>
+        </member>
+        <member name="M:Memoyu.Core.WebApi.Controllers.Core.AccountController.GetRefreshToken">
+            <summary>
+            刷新用户的token
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Memoyu.Core.WebApi.Controllers.Test.TestController">
             <summary>
             演示控制器
@@ -110,6 +129,11 @@
             </summary>
             <param name="services"></param>
             <returns></returns>
+        </member>
+        <member name="T:Memoyu.Core.WebApi.Extensions.JwtBearerSetup">
+            <summary>
+            配置Token
+            </summary>
         </member>
         <member name="T:Memoyu.Core.WebApi.Extensions.MiniProfilerSetup">
             <summary>

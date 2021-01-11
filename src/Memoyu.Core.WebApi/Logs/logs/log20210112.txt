@@ -1,0 +1,41 @@
+2021-01-12 00:22:41.430 +08:00 [INF] init main
+2021-01-12 00:22:43.612 +08:00 [INF] User profile is available. Using 'C:\Users\Memoyu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-12 00:22:43.738 +08:00 [INF] Starting the processing server.
+2021-01-12 00:22:43.783 +08:00 [INF] ### CAP started!
+2021-01-12 00:22:43.936 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-12 00:22:43.936 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-12 00:22:43.936 +08:00 [INF] Hosting environment: Development
+2021-01-12 00:22:43.936 +08:00 [INF] Content root path: D:\template\Memoyu.Core.Template\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-12 00:22:46.468 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html?urls.primaryName=%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%AB%AF%E6%8E%A5%E5%8F%A3 - -
+2021-01-12 00:22:46.546 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?urls.primaryName=%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%AB%AF%E6%8E%A5%E5%8F%A3 - - - 200 - text/html;charset=utf-8 81.2867ms
+2021-01-12 00:22:46.733 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v2/swagger.json - -
+2021-01-12 00:22:46.737 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon-32x32.png - -
+2021-01-12 00:22:46.750 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-01-12 00:22:46.750 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon-32x32.png - - - 200 628 image/png 13.4730ms
+2021-01-12 00:22:46.818 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v2/swagger.json - - - 200 - application/json;charset=utf-8 85.4288ms
+2021-01-12 00:22:55.364 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v3/swagger.json - -
+2021-01-12 00:22:55.368 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v3/swagger.json - - - 200 - application/json;charset=utf-8 3.6558ms
+2021-01-12 00:23:04.169 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json-patch+json 40
+2021-01-12 00:23:04.276 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Core.AccountController.Login (Memoyu.Core.WebApi)'
+2021-01-12 00:25:29.973 +08:00 [INF] init main
+2021-01-12 00:25:31.700 +08:00 [INF] User profile is available. Using 'C:\Users\Memoyu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-12 00:25:31.798 +08:00 [INF] Starting the processing server.
+2021-01-12 00:25:31.846 +08:00 [INF] ### CAP started!
+2021-01-12 00:25:32.017 +08:00 [INF] Now listening on: http://localhost:5000
+2021-01-12 00:25:32.018 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-12 00:25:32.018 +08:00 [INF] Hosting environment: Development
+2021-01-12 00:25:32.018 +08:00 [INF] Content root path: D:\template\Memoyu.Core.Template\Memoyu.Core\src\Memoyu.Core.WebApi
+2021-01-12 00:25:32.838 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html?urls.primaryName=%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E6%8E%A5%E5%8F%A3 - -
+2021-01-12 00:25:32.921 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?urls.primaryName=%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E6%8E%A5%E5%8F%A3 - - - 200 - text/html;charset=utf-8 85.9605ms
+2021-01-12 00:25:33.155 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v3/swagger.json - -
+2021-01-12 00:25:33.158 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon-32x32.png - -
+2021-01-12 00:25:33.171 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-01-12 00:25:33.172 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon-32x32.png - - - 200 628 image/png 14.0114ms
+2021-01-12 00:25:33.232 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v3/swagger.json - - - 200 - application/json;charset=utf-8 76.3971ms
+2021-01-12 00:25:43.351 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json-patch+json 40
+2021-01-12 00:25:43.447 +08:00 [INF] Executing endpoint 'Memoyu.Core.WebApi.Controllers.Core.AccountController.Login (Memoyu.Core.WebApi)'
+2021-01-12 00:25:43.855 +08:00 [INF] Executed endpoint 'Memoyu.Core.WebApi.Controllers.Core.AccountController.Login (Memoyu.Core.WebApi)'
+2021-01-12 00:25:43.863 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json-patch+json 40 - 200 838 application/json;+charset=utf-8 512.1834ms
+2021-01-12 00:25:47.088 +08:00 [INF] Application is shutting down...
+2021-01-12 00:25:47.125 +08:00 [INF] Shutting down the processing server...
+2021-01-12 00:25:47.128 +08:00 [INF] ### CAP shutdown!
