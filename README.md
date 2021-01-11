@@ -2,19 +2,16 @@
     <a href="http://memoyu.cn/">
         <img width="100" height="100" src="https://github.com/Memoyu/Memoyu.Core/blob/master/doc/images/memoyu.png">
     </a>
-</br>
-     <span  align="center">
- 	 	.NET 5快速开发模板
-     </span>
 </h1>
+<div align="center">
 
+.NET 5快速开发模板
 
-&nbsp;
-
-**知行合一**
+> 知行合一
 
 [![.NET5](https://img.shields.io/badge/.NET5.0.0-3963bc.svg)](https://dotnet.microsoft.com/download)
 [![](https://img.shields.io/badge/license-MIT-3963bc.svg)](LICENSE)
+</div>
 
 &nbsp;
 
