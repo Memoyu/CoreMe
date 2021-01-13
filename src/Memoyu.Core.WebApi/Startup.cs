@@ -4,16 +4,9 @@ using Memoyu.Core.WebApi.Middleware;
 using Memoyu.Core.WebApi.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Memoyu.Core.WebApi
 {
@@ -64,7 +57,8 @@ namespace Memoyu.Core.WebApi
             ////异常处理中间件
             //app.UseMiddleware<ExceptionHandlerMiddleware>();
 
-            app.UseAuthorization();
+            //认证中间件
+            app.UseAuthentication();
 
             // 性能分析
             app.UseMiniProfiler();
