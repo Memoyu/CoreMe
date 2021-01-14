@@ -10,6 +10,7 @@
 *   功能描述 ：
 ***************************************************************************/
 using AutoMapper;
+using Memoyu.Core.Application.Contracts.Mapper.Core;
 using Memoyu.Core.Application.Contracts.Mapper.Test;
 
 namespace Memoyu.Core.Application.Contracts.Mapper
@@ -23,6 +24,7 @@ namespace Memoyu.Core.Application.Contracts.Mapper
         {
             return new MapperConfiguration(cfg =>
             {
+                new PermissionMapper();
                 new TestMapper();
             });
         }

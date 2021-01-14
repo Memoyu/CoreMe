@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Core.Domain.Entities.System
+*   命名空间 ：Memoyu.Core.Domain.Entities.Core
 *   文件名称 ：RoleEntity.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -16,7 +16,7 @@ using Memoyu.Core.Domain.Shared.Const;
 using System;
 using System.Collections.Generic;
 
-namespace Memoyu.Core.Domain.Entities.System
+namespace Memoyu.Core.Domain.Entities.Core
 {
     /// <summary>
     /// 角色表

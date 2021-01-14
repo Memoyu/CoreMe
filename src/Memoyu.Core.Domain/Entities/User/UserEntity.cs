@@ -11,7 +11,7 @@
 ***************************************************************************/
 using FreeSql.DataAnnotations;
 using Memoyu.Core.Domain.Base;
-using Memoyu.Core.Domain.Entities.System;
+using Memoyu.Core.Domain.Entities.Core;
 using Memoyu.Core.Domain.Shared.Const;
 using System;
 using System.Collections.Generic;

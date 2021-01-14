@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Core.Domain.Entities.System
+*   命名空间 ：Memoyu.Core.Domain.Entities.Core
 *   文件名称 ：UserIdentity.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Memoyu.Core.Domain.Entities.System
+namespace Memoyu.Core.Domain.Entities.Core
 {
     /// <summary>
     /// 用户身份认证登录表

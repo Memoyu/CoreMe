@@ -10,7 +10,7 @@
 *   功能描述 ：
 ***************************************************************************/
 using Memoyu.Core.Domain.Base;
-using Memoyu.Core.Domain.Entities.System;
+using Memoyu.Core.Domain.Entities.Core;
 using Memoyu.Core.Domain.Shared.Const;
 using Memoyu.Core.Domain.Shared.Security;
 using Memoyu.Core.ToolKits.Base.Dependency;

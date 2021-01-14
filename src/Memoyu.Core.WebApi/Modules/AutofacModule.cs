@@ -13,6 +13,9 @@
 using Autofac;
 using Memoyu.Core.Domain.Shared.Security;
 using Memoyu.Core.Domain.Shared.Security.Impl;
+using Memoyu.Core.WebApi.Data;
+using Memoyu.Core.WebApi.Data.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 
 namespace Memoyu.Core.WebApi.Modules
@@ -22,8 +25,11 @@ namespace Memoyu.Core.WebApi.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().SingleInstance();
-
+            builder.RegisterType<PermissionAuthorizationHandler>().As<IAuthorizationHandler>().InstancePerLifetimeScope();
             builder.RegisterType<CurrentUser>().As<ICurrentUser>().InstancePerDependency();
+
+            builder.RegisterType<MigrationStartupTask>().SingleInstance();
+            builder.RegisterBuildCallback(async (c) => await c.Resolve<MigrationStartupTask>().StartAsync());
         }
     }
 }

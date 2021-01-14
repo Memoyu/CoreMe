@@ -1,7 +1,7 @@
 ﻿/**************************************************************************  
 *   =================================
 *   CLR版本  ：4.0.30319.42000
-*   命名空间 ：Memoyu.Core.Domain.Entities.System
+*   命名空间 ：Memoyu.Core.Domain.Entities.Core
 *   文件名称 ：PermissionEntity.cs
 *   =================================
 *   创 建 者 ：Memoyu
@@ -14,7 +14,7 @@ using Memoyu.Core.Domain.Base;
 using Memoyu.Core.Domain.Shared.Const;
 using System;
 
-namespace Memoyu.Core.Domain.Entities.System
+namespace Memoyu.Core.Domain.Entities.Core
 {
     /// <summary>
     /// 权限表
