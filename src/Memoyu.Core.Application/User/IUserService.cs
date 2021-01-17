@@ -10,8 +10,10 @@
 *   功能描述 ：
 ***************************************************************************/
 using Memoyu.Core.Application.Contracts.Dtos.User;
+using Memoyu.Core.Domain.Entities.User;
 using Memoyu.Core.ToolKits.Base.Page;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Memoyu.Core.Application.User
@@ -20,9 +22,21 @@ namespace Memoyu.Core.Application.User
     {
         Task<PagedDto<UserDto>> GetListAsync(PagingDto pageDto);
 
+        /// <summary>
+        /// 通过token获取用户信息
+        /// </summary>
+        /// <returns></returns>
+        Task<UserDto> GetAsync();
+
         Task<UserDto> GetAsync(Guid id);
 
-        Task CreateAsync(ModifyUserDto inputDto);
+        /// <summary>
+        /// 注册-新增一个用户
+        /// </summary>
+        /// <param name="user">用户</param>
+        /// <param name="roleIds">分组Id集合</param>
+        /// <param name="password">密码</param>
+        Task CreateAsync(UserEntity user, List<long> roleIds, string password);
 
         Task UpdateAsync(Guid id, ModifyUserDto inputDto);
 

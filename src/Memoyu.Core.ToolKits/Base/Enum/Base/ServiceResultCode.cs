@@ -51,11 +51,19 @@ namespace Memoyu.Core.ToolKits.Base.Enum.Base
         /// </summary>
         UnknownError = 1007,
 
+
+        #region Parameter
         /// <summary>
         /// 参数错误
         /// </summary>
         [Description("参数错误")]
         ParameterError = 10030,
+
+        /// <summary>
+        /// 字段重复
+        /// </summary>
+        RepeatField = 10060,
+        #endregion
 
 
 

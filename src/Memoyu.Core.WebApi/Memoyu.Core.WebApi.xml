@@ -48,17 +48,21 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Memoyu.Core.WebApi.Controllers.Test.TestController">
+        <member name="T:Memoyu.Core.WebApi.Controllers.User.UserController">
             <summary>
-            演示控制器
+            用户管理
             </summary>
         </member>
-        <member name="M:Memoyu.Core.WebApi.Controllers.Test.TestController.CreateAsync(Memoyu.Core.Application.Contracts.Dtos.Test.ModifyTestDto)">
+        <member name="M:Memoyu.Core.WebApi.Controllers.User.UserController.CreateAsync(Memoyu.Core.Application.Contracts.Dtos.User.ModifyUserDto)">
             <summary>
-            创建信息
+            超级管理员新增用户
             </summary>
-            <param name="dto"></param>
-            <returns></returns>
+            <param name="userInput"></param>
+        </member>
+        <member name="M:Memoyu.Core.WebApi.Controllers.User.UserController.GetByTokenAsync">
+            <summary>
+            获取用户信息，By Toekn
+            </summary>
         </member>
         <member name="P:Memoyu.Core.WebApi.Data.Swagger.SwaggerApiInfo.UrlPrefix">
             <summary>

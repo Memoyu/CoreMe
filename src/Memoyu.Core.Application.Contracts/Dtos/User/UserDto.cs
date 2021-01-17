@@ -30,7 +30,7 @@ namespace Memoyu.Core.Application.Contracts.Dtos.User
         /// <summary>
         /// 性别，0：未知，1：男，2：女
         /// </summary>
-        public int Gender { get; set; }
+        public string Gender { get; set; }
 
         /// <summary>
         /// 邮箱
