@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoreMe</name>
+    </assembly>
+    <members>
+        <member name="T:CoreMe.Controllers.Core.AccountController">
+            <summary>
+            账户相关
+            </summary>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.AccountController.Login(CoreMe.Service.Core.Auth.Input.LoginDto)">
+             <summary>
+             登录接口
+             </summary>
+            <example>
+             用户名：admin，密码：123456
+             </example>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.AccountController.GetRefreshToken">
+            <summary>
+            刷新用户的token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CoreMe.Controllers.Core.UserController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.UserController.CreateAsync(CoreMe.Service.Core.User.Input.ModifyUserDto)">
+            <summary>
+            超级管理员新增用户
+            </summary>
+            <param name="userInput"></param>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.UserController.GetByAsync(System.Nullable{System.Int64})">
+            <summary>
+            获取用户信息（id为空则通过token获取）
+            </summary>
+        </member>
+    </members>
+</doc>

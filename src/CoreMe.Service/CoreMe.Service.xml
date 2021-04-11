@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoreMe.Service</name>
+    </assembly>
+    <members>
+        <member name="P:CoreMe.Service.Base.CrudApplicationService`7.Repository">
+            <summary>
+            仓储
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.Auth.Input.LoginDto.Username">
+            <summary>
+            登录名
+            </summary>
+            <example>
+            admin
+            </example>
+        </member>
+        <member name="P:CoreMe.Service.Core.Auth.Input.LoginDto.Password">
+            <summary>
+            密码
+            </summary>
+            <example>
+            123456
+            </example>
+        </member>
+        <member name="M:CoreMe.Service.Core.Auth.ITokenService.LoginAsync(CoreMe.Service.Core.Auth.Input.LoginDto)">
+            <summary>
+            登录
+            </summary>
+            <param name="loginDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.Auth.ITokenService.GetTokenByRefreshAsync(System.String)">
+            <summary>
+            刷新token
+            </summary>
+            <param name="refreshToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.Auth.JwtTokenService.CreateTokenAsync(CoreMe.Core.Domains.Entities.User.UserEntity)">
+            <summary>
+            创建Token和RefreshToken
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.Auth.JwtTokenService.GenerateToken(System.Int32)">
+            <summary>
+            生成RefreshToken
+            </summary>
+            <param name="size">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.DataSeed.IDataSeedContributor.InitAdministratorPermissionAsync">
+            <summary>
+            初始化超级管理员角色权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.DataSeed.IDataSeedContributor.InitPermissionAsync(System.Collections.Generic.List{CoreMe.Core.Security.PermissionDefinition})">
+            <summary>
+            初始化权限，根据PermissionAttribute生成权限，改变的则更新，否则新增
+            </summary>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.Permission.IPermissionService.GetAllStructual">
+            <summary>
+            获取全部权限(结构化)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.Permission.IPermissionService.CheckAsync(System.String)">
+            <summary>
+            检查当前登陆用户的分组权限
+            </summary>
+            <param name="permission"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.Permission.IRoleService.GetAllAsync">
+            <summary>
+            获取所有角色信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Nickname">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Gender">
+            <summary>
+            性别，0：未知，1：男，2：女
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Province">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.City">
+            <summary>
+            市
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.District">
+            <summary>
+            区
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Street">
+            <summary>
+            街道
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.AvatarUrl">
+            <summary>
+            头像地址
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.ConfirmPassword">
+            <summary>
+            确认密码
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Input.ModifyUserDto.RoleIds">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.IUserIdentityService.VerifyUserPasswordAsync(System.Int64,System.String)">
+            <summary>
+            验证用户密码是否正确
+            </summary>
+            <param name="userId"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.IUserIdentityService.ChangePasswordAsync(System.Int64,System.String)">
+            <summary>
+            根据用户ID，修改用户的密码
+            </summary>
+            <param name="userId"></param>
+            <param name="newpassword"></param>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.IUserService.CreateAsync(CoreMe.Core.Domains.Entities.User.UserEntity,System.Collections.Generic.List{System.Int64},System.String)">
+            <summary>
+            注册-新增一个用户
+            </summary>
+            <param name="user">用户</param>
+            <param name="roleIds">分组Id集合</param>
+            <param name="password">密码</param>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.IUserService.GetAsync(System.Nullable{System.Int64})">
+            <summary>
+            获取用户信息，id为空时，通过Token获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.IUserService.GetPagesAsync(CoreMe.Service.Core.User.Input.UserPagingDto)">
+            <summary>
+            获取用户分页信息
+            </summary>
+            
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.IUserService.UpdateAsync(System.Int64,CoreMe.Core.Domains.Entities.User.UserEntity)">
+            <summary>
+            更新用户信息
+            </summary>
+            <param name="id"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.IUserService.DeleteAsync(System.Int64)">
+            <summary>
+            删除用户（软删除）
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Nickname">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Gender">
+            <summary>
+            性别，0：未知，1：男，2：女
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Province">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.City">
+            <summary>
+            市
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.District">
+            <summary>
+            区
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Street">
+            <summary>
+            街道
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.Address">
+            <summary>
+            地址详情
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.AvatarUrl">
+            <summary>
+            头像地址
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.LastLoginTime">
+            <summary>
+            最后一次登录的时间
+            </summary>
+        </member>
+        <member name="P:CoreMe.Service.Core.User.Output.UserDto.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="M:CoreMe.Service.Core.User.UserIdentityService.GetFirstByUserIdAsync(System.Int64)">
+            <summary>
+            通过Id获取用户信息
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
