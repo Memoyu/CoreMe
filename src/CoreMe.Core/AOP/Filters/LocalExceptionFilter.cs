@@ -66,8 +66,13 @@ namespace CoreMe.Core.AOP.Filters
 
         private void HandlerException(ExceptionContext context, ServiceResult response, int statusCode)
         {
-            context.Result = new JsonResult(response)
+            var set = new JsonSerializerSettings
             {
+                ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver()
+            };
+            context.Result = new ContentResult
+            {
+                Content = JsonConvert.SerializeObject(response, set),
                 StatusCode = statusCode,
                 ContentType = "application/json",
             };

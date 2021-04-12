@@ -16,7 +16,7 @@ namespace CoreMe.Controllers.Core
     /// <summary>
     /// 用户管理
     /// </summary>
-    [Route("api/admin/user")]
+    [Route("api/user")]
     public class UserController : ApiControllerBase
     {
         private readonly IMapper _mapper;
@@ -43,14 +43,25 @@ namespace CoreMe.Controllers.Core
         }
 
         /// <summary>
-        /// 获取用户信息（id为空则通过token获取）
+        /// 获取用户信息，By Id
         /// </summary>
         [HttpGet("get")]
         [Authorize]
         [ApiExplorerSettings(GroupName = SystemConst.Grouping.GroupName_v3)]
-        public async Task<ServiceResult<UserDto>> GetByAsync([FromQuery] long? id)
+        public async Task<ServiceResult<UserDto>> GetByIdAsync([FromQuery] long? id)
         {
             return ServiceResult<UserDto>.Successed(await _userService.GetAsync(id));
+        }
+
+        /// <summary>
+        /// 获取用户信息分页
+        /// </summary>
+        [HttpGet("get/pages")]
+        [Authorize]
+        [ApiExplorerSettings(GroupName = SystemConst.Grouping.GroupName_v3)]
+        public async Task<ServiceResult<PagedDto<UserDto>>> GetPagesAsync([FromQuery] UserPagingDto pagingDto)
+        {
+            return ServiceResult<PagedDto<UserDto>>.Successed(await _userService.GetPagesAsync(pagingDto));
         }
     }
 }

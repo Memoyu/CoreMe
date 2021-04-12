@@ -14,4 +14,8 @@
     <ProjectReference Include="..\CoreMe.Core\CoreMe.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\Files\Input\" />
+  </ItemGroup>
+
 </Project>

@@ -23,6 +23,49 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:CoreMe.Controllers.Core.FileController.UploadFile(Microsoft.AspNetCore.Http.IFormFile,System.String,System.Int32)">
+            <summary>
+            单文件上传，键为file
+            </summary>
+            <param name="file"></param>
+            <param name="type"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.FileController.UploadFiles(System.String)">
+            <summary>
+            多文件上传
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.FileController.ValidFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            校验上传文件
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="T:CoreMe.Controllers.Core.PermissionController">
+            <summary>
+            权限管理
+            </summary>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.PermissionController.GetAllPermissions">
+            <summary>
+            查询所有可分配的权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CoreMe.Controllers.Core.RoleController">
+            <summary>
+            权限管理
+            </summary>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.RoleController.GetAllAsync">
+            <summary>
+            获取全部角色信息
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:CoreMe.Controllers.Core.UserController">
             <summary>
             用户管理
@@ -34,9 +77,14 @@
             </summary>
             <param name="userInput"></param>
         </member>
-        <member name="M:CoreMe.Controllers.Core.UserController.GetByAsync(System.Nullable{System.Int64})">
+        <member name="M:CoreMe.Controllers.Core.UserController.GetByIdAsync(System.Nullable{System.Int64})">
             <summary>
-            获取用户信息（id为空则通过token获取）
+            获取用户信息，By Id
+            </summary>
+        </member>
+        <member name="M:CoreMe.Controllers.Core.UserController.GetPagesAsync(CoreMe.Service.Core.User.Input.UserPagingDto)">
+            <summary>
+            获取用户信息分页
             </summary>
         </member>
     </members>
