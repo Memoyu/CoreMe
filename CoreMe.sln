@@ -13,6 +13,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9D00EEBE-0ECA-4BD5-B3A6-60D36CF3CE3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{4B5A7A13-CE91-4AD3-A1C8-203F3CFC6C59}"
+ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.gitattributes = .gitattributes
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreMe.Core", "src\CoreMe.Core\CoreMe.Core.csproj", "{F04C9C57-6189-400F-A886-F25122ACADE9}"
 EndProject
