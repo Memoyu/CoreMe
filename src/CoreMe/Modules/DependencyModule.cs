@@ -10,7 +10,7 @@ namespace CoreMe.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName.Contains("CoreMe")).ToArray();
+            Assembly[] currentAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(r => r.FullName != null && r.FullName.Contains("CoreMe")).ToArray();
 
             //每次调用，都会重新实例化对象；每次请求都创建一个新的对象；
             Type transientDependency = typeof(ITransientDependency);

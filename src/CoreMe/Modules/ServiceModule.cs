@@ -26,13 +26,13 @@ namespace CoreMe.Modules
 
             string[] notIncludes = new string[]
             {
-                typeof(IdentityServer4Service).Name,
-                typeof(JwtTokenService).Name,
+                nameof(IdentityServer4Service),
+                nameof(JwtTokenService),
             };
 
             Assembly servicesDllFile = Assembly.Load("CoreMe.Service");
             builder.RegisterAssemblyTypes(servicesDllFile)
-                .Where(a => a.Name.EndsWith("Service") && !notIncludes.Where(r => r == a.Name).Any() && !a.IsAbstract && !a.IsInterface && a.IsPublic)
+                .Where(a => a.Name.EndsWith("Service") && notIncludes.All(r => r != a.Name) && !a.IsAbstract && !a.IsInterface && a.IsPublic)
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope()
                 .PropertiesAutowired()// 属性注入
@@ -40,8 +40,8 @@ namespace CoreMe.Modules
                 .EnableInterfaceInterceptors();
 
             //使用名称进行实现注册
-            builder.RegisterType<IdentityServer4Service>().Named<ITokenService>(typeof(IdentityServer4Service).Name).InstancePerLifetimeScope();
-            builder.RegisterType<JwtTokenService>().Named<ITokenService>(typeof(JwtTokenService).Name).InstancePerLifetimeScope();
+            builder.RegisterType<IdentityServer4Service>().Named<ITokenService>(nameof(IdentityServer4Service)).InstancePerLifetimeScope();
+            builder.RegisterType<JwtTokenService>().Named<ITokenService>(nameof(JwtTokenService)).InstancePerLifetimeScope();
         }
     }
 }

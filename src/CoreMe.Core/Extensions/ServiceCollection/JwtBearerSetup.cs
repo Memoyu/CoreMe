@@ -38,7 +38,7 @@ namespace CoreMe.Core.Extensions.ServiceCollection
 
                 if (isIds4)
                 {
-                    //identityserver4 地址
+                    // identityserver4 地址
                     options.Authority = Appsettings.Authority;
                 }
                 options.RequireHttpsMetadata = Appsettings.IsUseHttps;
@@ -71,8 +71,8 @@ namespace CoreMe.Core.Extensions.ServiceCollection
                 {
                     OnAuthenticationFailed = context =>
                     {
-                         //Token 过期
-                         if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        //Token 过期
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
                         {
                             context.Response.Headers.Add("Token-Expired", "true");
                         }
@@ -101,7 +101,7 @@ namespace CoreMe.Core.Extensions.ServiceCollection
                         }
                         else
                         {
-                            message = "请先登录 " + context.ErrorDescription; 
+                            message = "请先登录 " + context.ErrorDescription;
                             code = ServiceResultCode.AuthenticationFailed;
                         }
 
@@ -122,9 +122,9 @@ namespace CoreMe.Core.Extensions.ServiceCollection
                            Appsettings.JwtBearer.Audience,
                            Appsettings.JwtBearer.Issuer
                        );
-            services.AddHash();
-            services.AddCryptography("Memoyu.Core-cryptography");
-            services.AddJsonWebToken(jsonWebTokenSettings);
+            services.AddHashService();
+            services.AddICryptographyService("Memoyu.Core-cryptography");
+            services.AddJsonWebTokenService(jsonWebTokenSettings);
             return jsonWebTokenSettings;
         }
     }

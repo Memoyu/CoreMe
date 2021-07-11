@@ -30,7 +30,6 @@ namespace CoreMe.Core.Common.Configs
 
         #endregion
 
-
         #region Cors
 
         public static class Cors

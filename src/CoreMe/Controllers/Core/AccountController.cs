@@ -23,7 +23,7 @@ namespace CoreMe.Controllers.Core
         public AccountController(IComponentContext componentContext, IAccountService accountService)
         {
             bool isIdentityServer4 = Appsettings.IdentityServer4Enable;
-            _tokenService = componentContext.ResolveNamed<ITokenService>(isIdentityServer4 ? typeof(IdentityServer4Service).Name : typeof(JwtTokenService).Name);
+            _tokenService = componentContext.ResolveNamed<ITokenService>(isIdentityServer4 ? nameof(IdentityServer4Service) : nameof(JwtTokenService));
             _accountService = accountService;
         }
 

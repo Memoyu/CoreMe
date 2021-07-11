@@ -7,8 +7,8 @@ namespace CoreMe.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            Assembly assemblysRepository = Assembly.Load("CoreMe.Infrastructure");
-            builder.RegisterAssemblyTypes(assemblysRepository)
+            Assembly assemblyRepository = Assembly.Load("CoreMe.Infrastructure");
+            builder.RegisterAssemblyTypes(assemblyRepository)
                     .Where(a => a.Name.EndsWith("Repo"))
                     .AsImplementedInterfaces()
                     .InstancePerLifetimeScope();
