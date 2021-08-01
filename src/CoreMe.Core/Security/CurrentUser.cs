@@ -20,7 +20,6 @@ namespace CoreMe.Core.Security
         public string UserName => _claimsPrincipal?.FindUserName();
         public string Nickname => _claimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
         public string Email => _claimsPrincipal.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-        public long[] Roles => FindClaims(CoreClaimTypes.Roles).Select(c => long.Parse(c.Value)).ToArray();
 
         public virtual Claim FindClaim(string claimType)
         {

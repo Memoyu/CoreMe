@@ -12,11 +12,13 @@ namespace CoreMe.Service.Core.Permission
     {
         private readonly IPermissionRepo _permissionRepo;
         private readonly IRolePermissionRepo _rolePermissionRepo;
+        private readonly IUserRoleRepo _userRoleRepo;
 
-        public PermissionService(IPermissionRepo permissionRepo , IRolePermissionRepo rolePermissionRepo )
+        public PermissionService(IPermissionRepo permissionRepo, IRolePermissionRepo rolePermissionRepo, IUserRoleRepo userRoleRepo)
         {
             _permissionRepo = permissionRepo;
             _rolePermissionRepo = rolePermissionRepo;
+            _userRoleRepo = userRoleRepo;
         }
 
         public async Task<IDictionary<string, IEnumerable<PermissionDto>>> GetAllStructual()
@@ -30,9 +32,9 @@ namespace CoreMe.Service.Core.Permission
                    );
         }
 
-        public async Task<bool> CheckAsync(string permission)
+        public async Task<bool> CheckAsync(string permission, long userId)
         {
-            long[] roleIds = CurrentUser.Roles;
+            var roleIds = await _userRoleRepo.Select.Where(ur => ur.UserId == userId).ToListAsync(ur => ur.RoleId);
             PermissionEntity permissionEntity = await _permissionRepo.Where(r => r.Name == permission).FirstAsync();
             bool existPermission = await _rolePermissionRepo.Select
                 .AnyAsync(r => roleIds.Contains(r.RoleId) && r.PermissionId == permissionEntity.Id);

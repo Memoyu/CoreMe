@@ -28,10 +28,9 @@ namespace CoreMe.Service.Core.DataSeed
 
         public async Task InitAdministratorPermissionAsync()
         {
-            bool valid = await _rolePermissionRepo.Select.AnyAsync();
-            if (valid) return;
-            List<PermissionEntity> allPermissions = await _permissionRepo.Select.ToListAsync();//获取所有权限
-            List<RolePermissionEntity> rolePermissions = allPermissions.Select(u => new RolePermissionEntity(SystemConst.Role.Administrator, u.Id)).ToList();//构建超级管理员角色权限
+            var allPermissions = await _permissionRepo.Select.ToListAsync();//获取所有权限
+            var adminRolePermissions = await _rolePermissionRepo.Select.Where(rp => rp.RoleId == SystemConst.Role.Admin).ToListAsync();
+            var rolePermissions = allPermissions.Where(p => !adminRolePermissions.Any(rp => rp.PermissionId == p.Id)).Select(u => new RolePermissionEntity(SystemConst.Role.Admin, u.Id));//构建超级管理员角色权限
             await _rolePermissionRepo.InsertAsync(rolePermissions);//插入全部的超级管理员角色权限
         }
 

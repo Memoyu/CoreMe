@@ -1,5 +1,4 @@
 ﻿using CoreMe.Core.Common.Configs;
-using CoreMe.Core.Domains.Common.Consts;
 using CoreMe.Core.Domains.Common.Enums.Base;
 using CoreMe.Core.Domains.Entities.User;
 using CoreMe.Core.Exceptions;
@@ -85,11 +84,11 @@ namespace CoreMe.Service.Core.Auth
                 new Claim (ClaimTypes.GivenName, user.Nickname?? ""),
                 new Claim (ClaimTypes.Name, user.Username?? ""),
             };
-            user.Roles?.ForEach(r =>
-            {
-                claims.Add(new Claim(ClaimTypes.Role, r.Name));
-                claims.Add(new Claim(CoreClaimTypes.Roles, r.Id.ToString()));
-            });
+            //user.Roles?.ForEach(r =>
+            //{
+            //    claims.Add(new Claim(ClaimTypes.Role, r.Name));
+            //    claims.Add(new Claim(CoreClaimTypes.Roles, r.Id.ToString()));
+            //});
 
             string token = _jsonWebTokenService.Encode(claims);
 

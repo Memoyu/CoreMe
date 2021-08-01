@@ -7,8 +7,6 @@ namespace CoreMe.Core.Security
         long? Id { get; }
 
         string UserName { get; }
-        long[] Roles { get; }
-
 
         Claim FindClaim(string claimType);
 

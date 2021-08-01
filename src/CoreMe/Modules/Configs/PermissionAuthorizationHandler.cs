@@ -20,7 +20,8 @@ namespace CoreMe.Modules.Configs
             Claim userIdClaim = context.User?.FindFirst(_ => _.Type == ClaimTypes.NameIdentifier);
             if (userIdClaim != null)
             {
-                if (await _permissionService.CheckAsync(requirement.Name))
+                var userId = userIdClaim.Value;
+                if (await _permissionService.CheckAsync(requirement.Name, long.Parse(userId)))
                 {
                     context.Succeed(requirement);
                 }

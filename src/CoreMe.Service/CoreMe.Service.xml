@@ -96,11 +96,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:CoreMe.Service.Core.Permission.IPermissionService.CheckAsync(System.String)">
+        <member name="M:CoreMe.Service.Core.Permission.IPermissionService.CheckAsync(System.String,System.Int64)">
             <summary>
             检查当前登陆用户的分组权限
             </summary>
             <param name="permission"></param>
+            <param name="userId">用户Id</param>
             <returns></returns>
         </member>
         <member name="M:CoreMe.Service.Core.Permission.IRoleService.GetAllAsync">

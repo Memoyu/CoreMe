@@ -16,7 +16,8 @@ namespace CoreMe.Service.Core.Permission
         /// 检查当前登陆用户的分组权限
         /// </summary>
         /// <param name="permission"></param>
+        /// <param name="userId">用户Id</param>
         /// <returns></returns>
-        Task<bool> CheckAsync(string permission);
+        Task<bool> CheckAsync(string permission, long userId);
     }
 }
