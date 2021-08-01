@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using CoreMe.Core.Domains.Common.Base;
 using CoreMe.Core.Security;
-using CoreMe.Core.AOP.Attributes;
+using CoreMe.Core.AOP.Filters;
 
 namespace CoreMe.Core.Common
 {
