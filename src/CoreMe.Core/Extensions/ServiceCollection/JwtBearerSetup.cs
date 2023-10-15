@@ -114,17 +114,17 @@ namespace CoreMe.Core.Extensions.ServiceCollection
             });
         }
 
-        private static JsonWebTokenSettings AddSecurity(this IServiceCollection services)
+        private static JwtSettings AddSecurity(this IServiceCollection services)
         {
-            JsonWebTokenSettings jsonWebTokenSettings = new JsonWebTokenSettings(
+            JwtSettings jsonWebTokenSettings = new JwtSettings(
                            Appsettings.JwtBearer.SecurityKey,
-                           TimeSpan.FromMinutes(Appsettings.JwtBearer.Expires),
+                           TimeSpan.FromSeconds(Appsettings.JwtBearer.Expires),
                            Appsettings.JwtBearer.Audience,
                            Appsettings.JwtBearer.Issuer
                        );
             services.AddHashService();
-            services.AddICryptographyService("Memoyu.Core-cryptography");
-            services.AddJsonWebTokenService(jsonWebTokenSettings);
+            services.AddICryptographyService("CoreMe-cryptography");
+            services.AddJwtService(jsonWebTokenSettings);
             return jsonWebTokenSettings;
         }
     }

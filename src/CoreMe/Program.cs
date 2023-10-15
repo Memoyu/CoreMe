@@ -58,7 +58,7 @@ namespace CoreMe
                 {
                     webBuilder.UseStartup<Startup>()
 #if DEBUG
-                .UseUrls("http://*:10083");
+                .UseUrls("http://*:15089");
 #endif
                     ;
                 })

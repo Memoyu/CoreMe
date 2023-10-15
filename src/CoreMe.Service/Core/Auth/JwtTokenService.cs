@@ -20,8 +20,8 @@ namespace CoreMe.Service.Core.Auth
         private readonly ILogger<JwtTokenService> _logger;
         private readonly IUserRepo _userRepo;
         private readonly IUserIdentityService _userIdentityService;
-        private readonly IJsonWebTokenService _jsonWebTokenService;
-        public JwtTokenService(ILogger<JwtTokenService> logger, IUserRepo userRepo, IUserIdentityService userIdentityService, IJsonWebTokenService jsonWebTokenService)
+        private readonly IJwtService _jsonWebTokenService;
+        public JwtTokenService(ILogger<JwtTokenService> logger, IUserRepo userRepo, IUserIdentityService userIdentityService, IJwtService jsonWebTokenService)
         {
             _logger = logger;
             _userRepo = userRepo;

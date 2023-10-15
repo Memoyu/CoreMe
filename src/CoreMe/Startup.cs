@@ -26,14 +26,12 @@ namespace CoreMe
             services.AddController();//ÅäÖÃ×¢²áController
             services.AddJwtBearer();//ÅäÖÃJwt
             services.AddSwagger();//ÅäÖÃ×¢²áSwagger
-            services.AddCap();//ÅäÖÃCAP
             services.AddAutoMapper();//ÅäÖÃÊµÌåÓ³Éä
             services.AddCsRedisCore();//ÅäÖÃ×¢²áRedis»º´æ
             services.AddMiniProfiler();//ÅäÖÃ×¢²á¼à¿Ø
             services.AddIpRateLimiting();//ÅäÖÃ×¢²áÏŞÁ÷
             services.AddHealthChecks();//ÅäÖÃ×¢²á½¡¿µ¼ì²é
             services.AddCorsConfig();//ÅäÖÃ¿çÓò
-
         }
 
         public void ConfigureContainer(ContainerBuilder builder)

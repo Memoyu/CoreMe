@@ -10,7 +10,7 @@
       },
       "hotReloadProfile": "aspnetcore",
       "dotnetRunMessages": "true",
-      "applicationUrl": "http://localhost:5000"
+      "applicationUrl": "http://localhost:15556"
     },
     "Docker": {
       "commandName": "Docker",

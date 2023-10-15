@@ -1,14 +1,24 @@
-﻿using CoreMe.Core.Common.Configs;
-using CoreMe.Core.Domains.Common.Consts;
-using CoreMe.Core.Domains.Common.Enums.Base;
+﻿/**************************************************************************  
+*   =================================
+*   CLR版本  ：4.0.30319.42000
+*   命名空间 ：Sr.Manager.WebApi.Extensions
+*   文件名称 ：CapSetup.cs
+*   =================================
+*   创 建 者 ：Memoyu
+*   创建日期 ：2021-01-03 13:23:51
+*   邮箱     ：mmy6076@outlook.com
+*   功能描述 ：
+***************************************************************************/
 using DotNetCore.CAP;
 using DotNetCore.CAP.Messages;
+using Sr.Manager.Domain.Shared.Configurations;
+using Sr.Manager.ToolKits.Base.Enum.Base;
 using Microsoft.Extensions.DependencyInjection;
 using Savorboard.CAP.InMemoryMessageQueue;
 using Serilog;
 using System;
 
-namespace CoreMe.Core.Extensions.ServiceCollection
+namespace Sr.Manager.WebApi.Extensions
 {
     /// <summary>
     /// 配置注册CAP
@@ -48,8 +58,8 @@ namespace CoreMe.Core.Extensions.ServiceCollection
         /// <returns></returns>
         private static CapOptions UseCapOptions(this CapOptions options)
         {
-            var defaultStorage = Appsettings.CapDefaultStorage;
-            var defaultMessageQueue = Appsettings.CapDefaultMessageQueue;
+            var defaultStorage = AppSettings.CapDefaultStorage;
+            var defaultMessageQueue = AppSettings.CapDefaultMessageQueue;
 
             //配置Cap默认存储类型
             if (Enum.TryParse(defaultStorage, out CapStorageTypeEnums capStorageType))
@@ -67,8 +77,8 @@ namespace CoreMe.Core.Extensions.ServiceCollection
                     case CapStorageTypeEnums.Mysql:
                         options.UseMySql(opt=> 
                         {
-                            opt.ConnectionString = Appsettings.MySqlCon;
-                            opt.TableNamePrefix = SystemConst.DbTablePrefix;
+                            opt.ConnectionString = AppSettings.MySqlCon;
+                            opt.TableNamePrefix = AppSettings.CapStorageTablePrefix;
                         });
                         break;
                     default:
@@ -97,10 +107,10 @@ namespace CoreMe.Core.Extensions.ServiceCollection
                     case CapMessageQueueTypeEnums.RabbitMQ:
                         options.UseRabbitMQ(options =>
                         {
-                            options.HostName = Appsettings.CapRabbitMq.HostName;
-                            options.UserName = Appsettings.CapRabbitMq.UserName;
-                            options.Password = Appsettings.CapRabbitMq.Password;
-                            options.VirtualHost = Appsettings.CapRabbitMq.VirtualHost;
+                            options.HostName = AppSettings.CapRabbitMq.HostName;
+                            options.UserName = AppSettings.CapRabbitMq.UserName;
+                            options.Password = AppSettings.CapRabbitMq.Password;
+                            options.VirtualHost = AppSettings.CapRabbitMq.VirtualHost;
                         });
                         break;
                     default:
