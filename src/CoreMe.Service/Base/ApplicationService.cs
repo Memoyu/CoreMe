@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using AutoMapper;
 using FreeSql;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging.Abstractions;
 using CoreMe.Core.Security;
+using MapsterMapper;
 
 namespace CoreMe.Service.Base
 {

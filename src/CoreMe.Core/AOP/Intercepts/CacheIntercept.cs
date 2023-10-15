@@ -2,6 +2,7 @@
 using CoreMe.Core.AOP.Attributes;
 using CoreMe.Core.Common.Configs;
 using CoreMe.ToolKits.Utils;
+using EasyCaching.Core;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,12 @@ namespace CoreMe.Core.AOP.Intercepts
 {
     public class CacheIntercept : IInterceptor
     {
+        private readonly IEasyCachingProvider _cacheProvider;
+
+        public CacheIntercept(IEasyCachingProvider provider)
+        {
+            _cacheProvider = provider;
+        }
 
         public void Intercept(IInvocation invocation)
         {
@@ -35,7 +42,7 @@ namespace CoreMe.Core.AOP.Intercepts
                 {
                     string cacheKey = GenerateCacheKey(cacheAttr.CacheKey, invocation);//获取自定义缓存键
 
-                    string cacheValue = RedisHelper.Get(cacheKey);//获取缓存
+                    var cacheValue = _cacheProvider.Get<string>(cacheKey);//获取缓存
                     if (cacheValue != null)//存在缓存数据
                     {
                         Type[] resultTypes = returnType.GenericTypeArguments;//获取泛型类型的数组，例如Task<T1,T2,T3>中的T1/T2/T3
@@ -46,12 +53,12 @@ namespace CoreMe.Core.AOP.Intercepts
                         }
                         else if (returnType.IsGenericType && returnType.GetGenericTypeDefinition() == typeof(Task<>))//如果返回类型为Task<>
                         {
-                            dynamic d = JsonConvert.DeserializeObject(cacheValue, resultTypes.FirstOrDefault());//将缓存反序列化为resultTypes.FirstOrDefault()类型
+                            dynamic d = JsonConvert.DeserializeObject(cacheValue.Value, resultTypes.FirstOrDefault());//将缓存反序列化为resultTypes.FirstOrDefault()类型
                             invocation.ReturnValue = Task.FromResult(d);//赋值返回值
                         }
                         else//否则为同步方法
                         {
-                            invocation.ReturnValue = JsonConvert.DeserializeObject(cacheValue, returnType);//直接赋值返序列化，
+                            invocation.ReturnValue = JsonConvert.DeserializeObject(cacheValue.Value, returnType);//直接赋值返序列化，
                         }
 
                         return;
@@ -69,7 +76,7 @@ namespace CoreMe.Core.AOP.Intercepts
                     }
                     else
                     {
-                        RedisHelper.Set(cacheKey, JsonConvert.SerializeObject(invocation.ReturnValue), Appsettings.CacheExpire);
+                        _cacheProvider.Set(cacheKey, JsonConvert.SerializeObject(invocation.ReturnValue), TimeSpan.FromSeconds(Appsettings.CacheExpire));
                     }
                     return;
                 }
@@ -92,7 +99,7 @@ namespace CoreMe.Core.AOP.Intercepts
         private async Task<T> InterceptAsync<T>(string cacheKey, Task<T> task)
         {
             T result = await task.ConfigureAwait(false);
-            await RedisHelper.SetAsync(cacheKey, JsonConvert.SerializeObject(result), Appsettings.CacheExpire);
+            await _cacheProvider.SetAsync(cacheKey, JsonConvert.SerializeObject(result), TimeSpan.FromSeconds(Appsettings.CacheExpire));
             return result;
         }
 

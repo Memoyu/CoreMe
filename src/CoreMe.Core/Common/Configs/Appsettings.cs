@@ -158,7 +158,7 @@ namespace CoreMe.Core.Common.Configs
         public static bool CacheEnable => Convert.ToBoolean(_configuration["Cache:Enable"]);
 
         /// <summary>
-        /// 缓存过期时间
+        /// 缓存过期时间 单位：秒
         /// </summary>
         public static int CacheExpire => Convert.ToInt32(_configuration["Cache:ExpireSeconds"]);
 
@@ -215,7 +215,7 @@ namespace CoreMe.Core.Common.Configs
         /// <summary>
         /// CsRedis连接字符串
         /// </summary>
-        public static string CsRedisCon => _configuration["ConnectionStrings:CsRedis"];
+        public static string RedisCon => _configuration["ConnectionStrings:Redis"];
 
         #endregion
 

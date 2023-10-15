@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -9,16 +9,17 @@
     <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="Caching.CSRedis" Version="3.8.671" />
     <PackageReference Include="Castle.Core.AsyncInterceptor" Version="2.1.0" />
-    <PackageReference Include="CSRedisCore" Version="3.8.671" />
 	<PackageReference Include="DotNetCore.Security" Version="17.3.0" />
+	<PackageReference Include="EasyCaching.FreeRedis" Version="1.9.0" />
+	<PackageReference Include="EasyCaching.Serialization.SystemTextJson" Version="1.9.1" />
     <PackageReference Include="FreeSql" Version="3.2.801" />
     <PackageReference Include="FreeSql.DbContext" Version="3.2.801" />
     <PackageReference Include="FreeSql.Provider.MySqlConnector" Version="3.2.801" />
     <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.801" />
     <PackageReference Include="FreeSql.Provider.SqlServer" Version="3.2.801" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.12" />

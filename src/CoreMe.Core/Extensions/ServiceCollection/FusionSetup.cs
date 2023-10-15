@@ -2,7 +2,7 @@
 *   =================================
 *   CLR版本  ：4.0.30319.42000
 *   命名空间 ：Memoyu.Core.WebApi.Extensions
-*   文件名称 ：AutoMapperSetup.cs
+*   文件名称 ：FusionSetup.cs
 *   =================================
 *   创 建 者 ：Memoyu
 *   创建日期 ：2021-01-03 13:23:32
@@ -11,11 +11,15 @@
 ***************************************************************************/
 using AspNetCoreRateLimit;
 using CoreMe.Core.Common.Configs;
-using CSRedis;
+using EasyCaching.FreeRedis;
+using EasyCaching.Serialization.SystemTextJson.Configurations;
+using FreeRedis;
+using Mapster;
+using MapsterMapper;
 using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Caching.Redis;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -27,12 +31,31 @@ namespace CoreMe.Core.Extensions.ServiceCollection
     public static class FusionSetup
     {
         /// <summary>
-        /// 配置注册Automapper 服务
+        /// 配置注册Mapster服务
         /// </summary>
-        public static void AddAutoMapper(this IServiceCollection services)
+        public static IServiceCollection AddMapper(this IServiceCollection services, params Assembly[] assemblies)
         {
-            Assembly assemblys = Assembly.Load("CoreMe.Service");
-            services.AddAutoMapper(assemblys);
+            // 获取全局映射配置
+            var config = TypeAdapterConfig.GlobalSettings;
+
+            // 扫描所有继承  IRegister 接口的对象映射配置
+            if (assemblies != null && assemblies.Length > 0) config.Scan(assemblies);
+
+            // 配置默认全局映射（支持覆盖）
+            config.Default
+                  .NameMatchingStrategy(NameMatchingStrategy.Flexible)
+                  .PreserveReference(true);
+
+            // 配置默认全局映射（忽略大小写敏感）
+            config.Default
+                  .NameMatchingStrategy(NameMatchingStrategy.IgnoreCase)
+                  .PreserveReference(true);
+
+            // 配置支持依赖注入
+            services.AddSingleton(config);
+            services.AddScoped<IMapper, ServiceMapper>();
+
+            return services;
         }
 
         /// <summary>
@@ -69,16 +92,21 @@ namespace CoreMe.Core.Extensions.ServiceCollection
         }
 
         /// <summary>
-        /// 配置注册CSRedis
+        /// 配置注册EasyCaching
         /// </summary>
-        public static IServiceCollection AddCsRedisCore(this IServiceCollection services)
+        public static IServiceCollection AddEasyCaching(this IServiceCollection services)
         {
-            CSRedisClient csRedisClient = new CSRedisClient(Appsettings.CsRedisCon);
-            //初始化 RedisHelper
-            RedisHelper.Initialization(csRedisClient);
-
-            //注册mvc分布式缓存
-            services.AddSingleton<IDistributedCache>(new CSRedisCache(RedisHelper.Instance));
+            services.AddEasyCaching(ecops =>
+                 ecops.UseFreeRedis(frops =>
+                 {
+                     frops.DBConfig = new FreeRedisDBOptions
+                     {
+                         ConnectionStrings = new List<ConnectionStringBuilder>
+                         {
+                            Appsettings.RedisCon
+                         }
+                     };
+                 }).UseRedisLock().WithSystemTextJson());
             return services;
         }
         /// <summary>

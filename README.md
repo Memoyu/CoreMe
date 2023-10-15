@@ -27,14 +27,13 @@
 |                    技术栈                    |                           开源地址                           |
 | :------------------------------------------: | :----------------------------------------------------------: |
 |               Swagger API 文档               | [domaindrivendev/Swashbuckle.WebApi](https://github.com/domaindrivendev/Swashbuckle.WebApi) |
-|                 FreeSql ORM                  |  [dotnetcore/FreeSq](https://github.com/dotnetcore/FreeSql)  |
-|                CAP 分布式事务                |     [dotnetcore/CAP](https://github.com/dotnetcore/CAP)      |
+|                 FreeSql ORM                  | [dotnetcore/FreeSql](https://github.com/dotnetcore/FreeSql)  |
 |              Serilog 结构化日志              |    [serilog/serilog](https://github.com/serilog/serilog)     |
 |               MiniProfiler监控               | [MiniProfiler/dotnet](https://github.com/MiniProfiler/dotnet) |
 |          AspNetCoreRateLimit IP限流          | [stefanprodan/AspNetCoreRateLimit](https://github.com/stefanprodan/AspNetCoreRateLimit) |
 | AspNetCore.Diagnostics.HealthChecks 健康检查 | [Xabaril/AspNetCore.Diagnostics.HealthChecks](https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks) |
-|             AutoMapper 对象映射              | [AutoMapper/AutoMapper](https://github.com/AutoMapper/AutoMapper) |
-|             CSRedis RedisHelper              |    [2881099/csredis](https://github.com/2881099/csredis)     |
+|               Mapster 对象映射               | [MapsterMapper/Mapster](https://github.com/MapsterMapper/Mapster) |
+|               EasyCaching 缓存               | [dotnetcore/EasyCaching](https://github.com/dotnetcore/EasyCaching) |
 |             Autofac 依赖注入容器             |    [autofac/Autofac](https://github.com/autofac/Autofac)     |
 |     Newtonsoft.Json Json序列化/反序列化      | [JamesNK/Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) |
 |           IdentityServer4 身份认证           | [IdentityServer/IdentityServer4](https://github.com/IdentityServer/IdentityServer4) |

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using CoreMe.Core.AOP.Attributes;
+﻿using CoreMe.Core.AOP.Attributes;
 using CoreMe.Core.Domains.Common;
 using CoreMe.Core.Domains.Common.Consts;
 using CoreMe.Core.Domains.Entities.Core;
@@ -7,6 +6,7 @@ using CoreMe.Core.Domains.Entities.User;
 using CoreMe.Service.Core.User;
 using CoreMe.Service.Core.User.Input;
 using CoreMe.Service.Core.User.Output;
+using MapsterMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
