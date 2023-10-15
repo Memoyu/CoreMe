@@ -180,36 +180,6 @@ namespace CoreMe.Core.Common.Configs
 
         #endregion
 
-        #region CAP
-
-        /// <summary>
-        /// Cap默认存储表前缀
-        /// </summary>
-        public static string CapStorageTablePrefix => _configuration["CAP:TableNamePrefix"];
-
-        /// <summary>
-        /// Cap默认存储
-        /// </summary>
-        public static string CapDefaultStorage => _configuration["CAP:DefaultStorage"];
-
-        /// <summary>
-        /// Cap默认队列
-        /// </summary>
-        public static string CapDefaultMessageQueue => _configuration["CAP:DefaultMessageQueue"];
-
-        /// <summary>
-        /// Cap RabbitMq 连接信息
-        /// </summary>
-        public class CapRabbitMq
-        {
-            public static string HostName => _configuration["CAP:RabbitMQ:HostName"];
-            public static string UserName => _configuration["CAP:RabbitMQ:UserName"];
-            public static string Password => _configuration["CAP:RabbitMQ:Password"];
-            public static string VirtualHost => _configuration["CAP:RabbitMQ:VirtualHost"];
-        }
-
-        #endregion
-
         #region Redis
 
         /// <summary>
