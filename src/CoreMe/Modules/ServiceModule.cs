@@ -7,41 +7,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace CoreMe.Modules
+namespace CoreMe.Modules;
+
+public class ServiceModule : Autofac.Module
 {
-    public class ServiceModule : Autofac.Module
+    protected override void Load(ContainerBuilder builder)
     {
-        protected override void Load(ContainerBuilder builder)
+        builder.RegisterType<UnitOfWorkAsyncInterceptor>();
+        builder.RegisterType<UnitOfWorkInterceptor>();
+
+        builder.RegisterType<CacheIntercept>();
+
+        List<Type> interceptorServiceTypes = new List<Type>()
         {
-            builder.RegisterType<UnitOfWorkAsyncInterceptor>();
-            builder.RegisterType<UnitOfWorkInterceptor>();
+            typeof(UnitOfWorkInterceptor),
+            typeof(CacheIntercept),
+        };
 
-            builder.RegisterType<CacheIntercept>();
+        string[] notIncludes = new string[]
+        {
+            nameof(IdentityServer4Service),
+            nameof(JwtTokenService),
+        };
 
-            List<Type> interceptorServiceTypes = new List<Type>()
-            {
-                typeof(UnitOfWorkInterceptor),
-                typeof(CacheIntercept),
-            };
+        Assembly servicesDllFile = Assembly.Load("CoreMe.Service");
+        builder.RegisterAssemblyTypes(servicesDllFile)
+            .Where(a => a.Name.EndsWith("Service") && notIncludes.All(r => r != a.Name) && !a.IsAbstract && !a.IsInterface && a.IsPublic)
+            .AsImplementedInterfaces()
+            .InstancePerLifetimeScope()
+            .PropertiesAutowired()// 属性注入
+            .InterceptedBy(interceptorServiceTypes.ToArray())
+            .EnableInterfaceInterceptors();
 
-            string[] notIncludes = new string[]
-            {
-                nameof(IdentityServer4Service),
-                nameof(JwtTokenService),
-            };
-
-            Assembly servicesDllFile = Assembly.Load("CoreMe.Service");
-            builder.RegisterAssemblyTypes(servicesDllFile)
-                .Where(a => a.Name.EndsWith("Service") && notIncludes.All(r => r != a.Name) && !a.IsAbstract && !a.IsInterface && a.IsPublic)
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope()
-                .PropertiesAutowired()// 属性注入
-                .InterceptedBy(interceptorServiceTypes.ToArray())
-                .EnableInterfaceInterceptors();
-
-            //使用名称进行实现注册
-            builder.RegisterType<IdentityServer4Service>().Named<ITokenService>(nameof(IdentityServer4Service)).InstancePerLifetimeScope();
-            builder.RegisterType<JwtTokenService>().Named<ITokenService>(nameof(JwtTokenService)).InstancePerLifetimeScope();
-        }
+        //使用名称进行实现注册
+        builder.RegisterType<IdentityServer4Service>().Named<ITokenService>(nameof(IdentityServer4Service)).InstancePerLifetimeScope();
+        builder.RegisterType<JwtTokenService>().Named<ITokenService>(nameof(JwtTokenService)).InstancePerLifetimeScope();
     }
 }

@@ -1,6 +1,5 @@
-﻿namespace CoreMe.Service.Base
+﻿namespace CoreMe.Service.Base;
+
+public interface IApplicationService
 {
-    public interface IApplicationService
-    {
-    }
 }

@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CoreMe.Service.Core.Permission
-{
-    public interface IPermissionService
-    {
-        /// <summary>
-        /// 获取全部权限(结构化)
-        /// </summary>
-        /// <returns></returns>
-        Task<IDictionary<string, IEnumerable<PermissionDto>>> GetAllStructual();
+namespace CoreMe.Service.Core.Permission;
 
-        /// <summary>
-        /// 检查当前登陆用户的分组权限
-        /// </summary>
-        /// <param name="permission"></param>
-        /// <param name="userId">用户Id</param>
-        /// <returns></returns>
-        Task<bool> CheckAsync(string permission, long userId);
-    }
+public interface IPermissionService
+{
+    /// <summary>
+    /// 获取全部权限(结构化)
+    /// </summary>
+    /// <returns></returns>
+    Task<IDictionary<string, IEnumerable<PermissionDto>>> GetAllStructual();
+
+    /// <summary>
+    /// 检查当前登陆用户的分组权限
+    /// </summary>
+    /// <param name="permission"></param>
+    /// <param name="userId">用户Id</param>
+    /// <returns></returns>
+    Task<bool> CheckAsync(string permission, long userId);
 }

@@ -1,20 +1,19 @@
 ﻿using System.Security.Claims;
 
-namespace CoreMe.Core.Security
+namespace CoreMe.Core.Security;
+
+public interface ICurrentUser
 {
-    public interface ICurrentUser
-    {
-        long? Id { get; }
+    long? Id { get; }
 
-        string UserName { get; }
+    string UserName { get; }
 
-        Claim FindClaim(string claimType);
+    Claim FindClaim(string claimType);
 
-        Claim[] FindClaims(string claimType);
+    Claim[] FindClaims(string claimType);
 
-        Claim[] GetAllClaims();
+    Claim[] GetAllClaims();
 
 
-        bool IsInGroup(long groupId);
-    }
+    bool IsInGroup(long groupId);
 }

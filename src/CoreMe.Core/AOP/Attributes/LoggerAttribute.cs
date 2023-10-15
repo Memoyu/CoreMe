@@ -1,15 +1,14 @@
 ﻿using System;
 
-namespace CoreMe.Core.AOP.Attributes
-{
-    [AttributeUsage(AttributeTargets.Method)]
-    public class LoggerAttribute : Attribute
-    {
-        public string Template { get; }
+namespace CoreMe.Core.AOP.Attributes;
 
-        public LoggerAttribute(string template)
-        {
-            Template = template ?? throw new ArgumentNullException(nameof(template));
-        }
+[AttributeUsage(AttributeTargets.Method)]
+public class LoggerAttribute : Attribute
+{
+    public string Template { get; }
+
+    public LoggerAttribute(string template)
+    {
+        Template = template ?? throw new ArgumentNullException(nameof(template));
     }
 }

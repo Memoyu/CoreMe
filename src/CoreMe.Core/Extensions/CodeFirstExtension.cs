@@ -11,7 +11,7 @@ namespace CoreMe.Core.Extensions
     /// <summary>
     /// 构建种子数据
     /// </summary>
-    public static class CodeFirstExtension
+    public static class CodeFirstExtension;
     {
         public static ICodeFirst SeedData(this ICodeFirst fsql)
         {

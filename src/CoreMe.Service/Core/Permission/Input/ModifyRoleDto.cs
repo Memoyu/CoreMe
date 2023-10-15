@@ -1,6 +1,5 @@
-﻿namespace CoreMe.Service.Core.Permission.Input
+﻿namespace CoreMe.Service.Core.Permission.Input;
+
+public class ModifyRoleDto
 {
-    public class ModifyRoleDto
-    {
-    }
 }

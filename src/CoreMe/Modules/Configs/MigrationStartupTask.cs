@@ -6,33 +6,32 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CoreMe.Modules.Configs
+namespace CoreMe.Modules.Configs;
+
+public class MigrationStartupTask
 {
-    public class MigrationStartupTask
+    private readonly IServiceProvider _serviceProvider;
+    private readonly ILogger<MigrationStartupTask> _logger;
+    public MigrationStartupTask(IServiceProvider serviceProvider, ILogger<MigrationStartupTask> logger)
     {
-        private readonly IServiceProvider _serviceProvider;
-        private readonly ILogger<MigrationStartupTask> _logger;
-        public MigrationStartupTask(IServiceProvider serviceProvider, ILogger<MigrationStartupTask> logger)
-        {
-            _serviceProvider = serviceProvider;
-            _logger = logger;
-        }
+        _serviceProvider = serviceProvider;
+        _logger = logger;
+    }
 
-        public async Task StartAsync(CancellationToken cancellationToken = default)
+    public async Task StartAsync(CancellationToken cancellationToken = default)
+    {
+        try
         {
-            try
-            {
-                using var scope = _serviceProvider.CreateScope();
-                IDataSeedContributor dataSeedContributor = scope.ServiceProvider.GetRequiredService<IDataSeedContributor>();
+            using var scope = _serviceProvider.CreateScope();
+            IDataSeedContributor dataSeedContributor = scope.ServiceProvider.GetRequiredService<IDataSeedContributor>();
 
-                var permissions = DomainReflexUtil.GetAssemblyPermissionAttributes();
-                await dataSeedContributor.InitPermissionAsync(permissions);
-                await dataSeedContributor.InitAdministratorPermissionAsync();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"初始化数据失败！！！{ex.Message}{ex.StackTrace}{ex.InnerException}");
-            };
+            var permissions = DomainReflexUtil.GetAssemblyPermissionAttributes();
+            await dataSeedContributor.InitPermissionAsync(permissions);
+            await dataSeedContributor.InitAdministratorPermissionAsync();
         }
+        catch (Exception ex)
+        {
+            _logger.LogError($"初始化数据失败！！！{ex.Message}{ex.StackTrace}{ex.InnerException}");
+        };
     }
 }

@@ -1,19 +1,18 @@
 ﻿using Castle.DynamicProxy;
 
-namespace CoreMe.Core.AOP.Intercepts
+namespace CoreMe.Core.AOP.Intercepts;
+
+public class UnitOfWorkInterceptor : IInterceptor
 {
-    public class UnitOfWorkInterceptor : IInterceptor
+    private readonly UnitOfWorkAsyncInterceptor asyncInterceptor;
+
+    public UnitOfWorkInterceptor(UnitOfWorkAsyncInterceptor interceptor)
     {
-        private readonly UnitOfWorkAsyncInterceptor asyncInterceptor;
+        asyncInterceptor = interceptor;
+    }
 
-        public UnitOfWorkInterceptor(UnitOfWorkAsyncInterceptor interceptor)
-        {
-            asyncInterceptor = interceptor;
-        }
-
-        public void Intercept(IInvocation invocation)
-        {
-            asyncInterceptor.ToInterceptor().Intercept(invocation);
-        }
+    public void Intercept(IInvocation invocation)
+    {
+        asyncInterceptor.ToInterceptor().Intercept(invocation);
     }
 }

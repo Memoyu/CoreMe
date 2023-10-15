@@ -1,22 +1,21 @@
 ﻿using System;
 
-namespace CoreMe.Service.Core.Auth.Input
+namespace CoreMe.Service.Core.Auth.Input;
+
+public class TokenDto
 {
-    public class TokenDto
+    public TokenDto(string accessToken, string refreshToken)
     {
-        public TokenDto(string accessToken, string refreshToken)
-        {
-            AccessToken = accessToken ?? throw new ArgumentNullException(nameof(accessToken));
-            RefreshToken = refreshToken ?? throw new ArgumentNullException(nameof(refreshToken));
-        }
+        AccessToken = accessToken ?? throw new ArgumentNullException(nameof(accessToken));
+        RefreshToken = refreshToken ?? throw new ArgumentNullException(nameof(refreshToken));
+    }
 
-        public string AccessToken { get; set; }
+    public string AccessToken { get; set; }
 
-        public string RefreshToken { get; set; }
+    public string RefreshToken { get; set; }
 
-        public override string ToString()
-        {
-            return $"TokenDto - 授权Token:{AccessToken},刷新Token:{RefreshToken}";
-        }
+    public override string ToString()
+    {
+        return $"TokenDto - 授权Token:{AccessToken},刷新Token:{RefreshToken}";
     }
 }

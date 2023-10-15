@@ -4,12 +4,11 @@ using CoreMe.Core.Security;
 using CoreMe.Infrastructure.Repository.Base;
 using FreeSql;
 
-namespace CoreMe.Infrastructure.Repository.Core
+namespace CoreMe.Infrastructure.Repository.Core;
+
+public class BaseItemRepo : AuditBaseRepo<BaseItemEntity>, IBaseItemRepo
 {
-    public class BaseItemRepo : AuditBaseRepo<BaseItemEntity>, IBaseItemRepo
+    public BaseItemRepo(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager, currentUser)
     {
-        public BaseItemRepo(UnitOfWorkManager unitOfWorkManager, ICurrentUser currentUser) : base(unitOfWorkManager, currentUser)
-        {
-        }
     }
 }

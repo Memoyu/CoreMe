@@ -5,48 +5,47 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace CoreMe.Core.AOP.Middleware
+namespace CoreMe.Core.AOP.Middleware;
+
+/// <summary>
+/// 异常处理中间件
+/// </summary>
+public class ExceptionHandlerMiddleware
 {
-    /// <summary>
-    /// 异常处理中间件
-    /// </summary>
-    public class ExceptionHandlerMiddleware
+    private readonly RequestDelegate _next;
+    public ExceptionHandlerMiddleware(RequestDelegate next)
     {
-        private readonly RequestDelegate _next;
-        public ExceptionHandlerMiddleware(RequestDelegate next)
-        {
-            _next = next;
-        }
+        _next = next;
+    }
 
-        public async Task Invoke(HttpContext context)
+    public async Task Invoke(HttpContext context)
+    {
+        try
         {
-            try
+            await _next(context);
+        }
+        catch (Exception ex)
+        {
+            await ExceptionHandlerAsync(context, ex.Message);
+        }
+        finally
+        {
+            var statusCode = context.Response.StatusCode;
+            if (statusCode != StatusCodes.Status200OK)
             {
-                await _next(context);
-            }
-            catch (Exception ex)
-            {
-                await ExceptionHandlerAsync(context, ex.Message);
-            }
-            finally
-            {
-                var statusCode = context.Response.StatusCode;
-                if (statusCode != StatusCodes.Status200OK)
-                {
-                    //获取状态码对应的值
-                    Enum.TryParse(typeof(HttpStatusCode), statusCode.ToString(), out object message);
-                    await ExceptionHandlerAsync(context, message.ToString());
-                }
+                //获取状态码对应的值
+                Enum.TryParse(typeof(HttpStatusCode), statusCode.ToString(), out object message);
+                await ExceptionHandlerAsync(context, message.ToString());
             }
         }
+    }
 
-        private async Task ExceptionHandlerAsync(HttpContext context, string message)
-        {
-            context.Response.ContentType = "application/json;charset=utf-8";
+    private async Task ExceptionHandlerAsync(HttpContext context, string message)
+    {
+        context.Response.ContentType = "application/json;charset=utf-8";
 
-            var result = new ServiceResult();
-            result.IsFailed(message);
-            await context.Response.WriteAsync(result.ToJson());
-        }
+        var result = new ServiceResult();
+        result.IsFailed(message);
+        await context.Response.WriteAsync(result.ToJson());
     }
 }

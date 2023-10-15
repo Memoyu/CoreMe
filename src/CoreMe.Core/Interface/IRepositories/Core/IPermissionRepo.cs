@@ -1,9 +1,8 @@
 ﻿using CoreMe.Core.Domains.Entities.Core;
 using CoreMe.Core.Interface.IRepositories.Base;
 
-namespace CoreMe.Core.Interface.IRepositories.Core
+namespace CoreMe.Core.Interface.IRepositories.Core;
+
+public interface IPermissionRepo: IAuditBaseRepo<PermissionEntity>
 {
-    public interface IPermissionRepo: IAuditBaseRepo<PermissionEntity>
-    {
-    }
 }

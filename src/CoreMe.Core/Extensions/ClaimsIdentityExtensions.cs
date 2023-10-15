@@ -4,7 +4,7 @@ using System.Security.Claims;
 
 namespace CoreMe.Core.Extensions
 {
-    public static class ClaimsIdentityExtensions
+    public static class ClaimsIdentityExtensions;
     {
         public static int? FindUserId(this ClaimsPrincipal principal)
         {
