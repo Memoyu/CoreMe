@@ -1,5 +1,6 @@
 using AspNetCoreRateLimit;
 using Autofac.Extensions.DependencyInjection;
+using CoreMe.Core.Common;
 using CoreMe.Core.Common.Configs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,10 @@ public class Program
         try
         {
             Log.Information("init main");
+
+            // ÅäÖÃÑ©»¨IDÉú³ÉÆ÷
+            SnowFlake.SnowFlakeConfig();
+
             IHost webHost = CreateHostBuilder(args).Build();
             try
             {
