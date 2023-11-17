@@ -4,7 +4,7 @@
         <name>CoreMe.Service</name>
     </assembly>
     <members>
-        <member name="P:CoreMe.Service.Base.CrudApplicationService`7.Repository">
+        <member name="P:CoreMe.Service.Base.CrudApplicationSvc`7.Repository">
             <summary>
             仓储
             </summary>
@@ -71,6 +71,7 @@
             单文件上传，键为file
             </summary>
             <param name="file"></param>
+            <param name="type"></param>
             <param name="key"></param>
             <returns></returns>
         </member>
@@ -79,6 +80,7 @@
             本地文件上传，秒传（根据lin_file表中的md5,与当前文件的路径是否在本地），如果不在，重新上传，覆盖文件表记录
             </summary>
             <param name="file"></param>
+            <param name="type"></param>
             <param name="key"></param>
             <returns></returns>
         </member>
@@ -88,6 +90,7 @@
             images/2022-01-12/fba73a0c-f2f7-499a-8ed8-5b10554d43b0.jpg
             </summary>
             <param name="file"></param>
+            <param name="type"></param>
             <returns></returns>
         </member>
         <member name="M:CoreMe.Service.Core.Permission.IPermissionService.GetAllStructual">

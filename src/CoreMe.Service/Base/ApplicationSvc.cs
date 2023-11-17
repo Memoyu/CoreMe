@@ -9,7 +9,7 @@ using MapsterMapper;
 
 namespace CoreMe.Service.Base;
 
-public class ApplicationService : IApplicationService
+public class ApplicationSvc : IApplicationSvc
 {
     //provider Lock
     protected readonly object ServiceProviderLock = new object();

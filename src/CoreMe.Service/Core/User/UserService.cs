@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace CoreMe.Service.Core.User;
 
-public class UserService : ApplicationService, IUserService
+public class UserService : ApplicationSvc, IUserService
 {
     private readonly IUserRepo _userRepo;
     private readonly IFileRepo _fileRepo;

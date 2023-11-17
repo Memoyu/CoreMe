@@ -9,7 +9,7 @@ namespace CoreMe.Core.Domains.Entities.Core;
 /// 用户身份认证登录表
 /// </summary>
 [Table(Name = SystemConst.DbTablePrefix +  "_user_identity")]
-public class UserIdentityEntity : FullAduitEntity<Guid>
+public class UserIdentityEntity : FullAduitEntity
 {
     public const string GitHub = "GitHub";
     public const string Password = "Password";

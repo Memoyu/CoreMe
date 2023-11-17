@@ -1,4 +1,4 @@
-﻿using CoreMe.Core.Domains.Common.Consts;
+﻿using CoreMe.Core.Domains.Common.Enums.Base;
 using CoreMe.Core.Domains.Entities.Core;
 using CoreMe.Core.Interface.IDependency;
 using CoreMe.Core.Interface.IRepositories.Core;
@@ -16,22 +16,51 @@ namespace CoreMe.Service.Core.DataSeed;
 public class DataSeedContributor : IDataSeedContributor, ISingletonDependency
 {
 
+    private readonly IRoleRepo _roleRepo;
     private readonly IPermissionRepo _permissionRepo;
     private readonly IRolePermissionRepo _rolePermissionRepo;
     private readonly ILogger<DataSeedContributor> _logger;
-    public DataSeedContributor(IPermissionRepo permissionRepo, IRolePermissionRepo rolePermissionRepo, ILogger<DataSeedContributor> logger)
+    public DataSeedContributor(
+        ILoggerFactory loggerFactory,
+        IRoleRepo roleRepo,
+        IPermissionRepo permissionRepo,
+        IRolePermissionRepo rolePermissionRepo
+        )
     {
+        _logger = loggerFactory.CreateLogger<DataSeedContributor>();
+        _roleRepo = roleRepo;
         _permissionRepo = permissionRepo;
         _rolePermissionRepo = rolePermissionRepo;
-        _logger = logger;
+
     }
 
     public async Task InitAdministratorPermissionAsync()
     {
-        var allPermissions = await _permissionRepo.Select.ToListAsync();//获取所有权限
-        var adminRolePermissions = await _rolePermissionRepo.Select.Where(rp => rp.RoleId == SystemConst.Role.Admin).ToListAsync();
-        var rolePermissions = allPermissions.Where(p => !adminRolePermissions.Any(rp => rp.PermissionId == p.Id)).Select(u => new RolePermissionEntity(SystemConst.Role.Admin, u.Id));//构建超级管理员角色权限
-        await _rolePermissionRepo.InsertAsync(rolePermissions);//插入全部的超级管理员角色权限
+        var roles = await _roleRepo.Select.Where(r => r.Type == RoleType.Administrator.GetHashCode()).ToListAsync();
+        if (!roles.Any()) return;
+
+        var roleBIds = roles.Select(r => r.Id).ToList();
+        List<PermissionEntity> pers = await _permissionRepo.Select.ToListAsync();//获取所有权限
+        List<RolePermissionEntity> rolePers = await _rolePermissionRepo.Select.Where(rp => roleBIds.Contains(rp.RoleId)).ToListAsync();
+        var needAddRolePers = new List<RolePermissionEntity>();
+        foreach (var role in roles)
+        {
+            var currRolePers = rolePers.Where(rp => rp.RoleId == role.Id).ToList();
+            var adds = pers.Where(p => !currRolePers.Any(crp => crp.PermissionId == p.Id)).Select(p => new RolePermissionEntity
+            {
+                // TODO：待加入雪花ID支持
+                // BId = SnowFlake.NextId(),
+                RoleId = role.Id,
+                PermissionId = p.Id,
+            }).ToList();
+            if (adds.Any())
+                needAddRolePers.AddRange(adds);
+        }
+
+        if (needAddRolePers.Any())
+            await _rolePermissionRepo.InsertAsync(needAddRolePers);//插入全部的超级管理员角色权限
+
+        _logger.LogInformation($"超级管理员权限：新增了{needAddRolePers.Count}条数据");
     }
 
     public async Task InitPermissionAsync(List<PermissionDefinition> permissions)

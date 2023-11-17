@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoreMe.Service.Core.Permission;
 
-public class RoleService : ApplicationService, IRoleService
+public class RoleService : ApplicationSvc, IRoleService
 {
     private readonly IRoleRepo _roleRepo;
     public RoleService(IRoleRepo roleRepo)

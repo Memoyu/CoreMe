@@ -1,5 +1,5 @@
 ﻿namespace CoreMe.Service.Base;
 
-public interface IApplicationService
+public interface IApplicationSvc
 {
 }

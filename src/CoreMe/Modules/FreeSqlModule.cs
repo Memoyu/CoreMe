@@ -30,7 +30,7 @@ public class FreeSqlModule : Module
           .Build()
           .SetDbContextOptions(opt =>
           {
-              opt.EnableAddOrUpdateNavigateList = true;
+              opt.EnableCascadeSave = true;
               opt.OnEntityChange = rep =>
               {
                   //进行审计

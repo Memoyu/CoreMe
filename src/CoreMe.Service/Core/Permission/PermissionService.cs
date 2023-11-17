@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CoreMe.Service.Core.Permission;
 
-public class PermissionService : ApplicationService, IPermissionService
+public class PermissionService : ApplicationSvc, IPermissionService
 {
     private readonly IPermissionRepo _permissionRepo;
     private readonly IRolePermissionRepo _rolePermissionRepo;

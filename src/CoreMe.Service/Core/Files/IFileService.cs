@@ -10,6 +10,7 @@ public interface IFileService
     /// 单文件上传，键为file
     /// </summary>
     /// <param name="file"></param>
+    /// <param name="type"></param>
     /// <param name="key"></param>
     /// <returns></returns>
     Task<FileDto> UploadAsync(IFormFile file, string type, int key = 0);

@@ -4,6 +4,7 @@ using CoreMe.Core.Domains.Entities.User;
 using FreeSql.DataAnnotations;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CoreMe.Core.Domains.Entities.Core;
 
@@ -47,6 +48,12 @@ public class RoleEntity : FullAduitEntity
     /// </summary>
     [Column(StringLength = 60)]
     public string Name { get; set; }
+
+    /// <summary>
+    /// 角色类型
+    /// </summary>
+    [Description("角色类型")]
+    public int Type { get; set; }
 
     /// <summary>
     /// 角色描述
