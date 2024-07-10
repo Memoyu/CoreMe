@@ -1,7 +1,7 @@
-<h1 align="center" style="margin-bottom: 40px">
-  <img src="https://raw.githubusercontent.com/Memoyu/Memoyu/main/logo.png" alt="memoyu" width="128" />
-  CoreMe
-</h1>
+<div align="center"  style="margin-bottom: 40px">
+ <img src="https://raw.githubusercontent.com/Memoyu/Memoyu/main/logo.png" alt="memoyu" width="128" />
+</div>
+<h1 align="center">CoreMe</h1>
 <div align="center">
  <h3>基于.NET8开箱即用项目模板</h3>
  <a href="https://dotnet.microsoft.com/zh-cn/download"><img src="https://img.shields.io/badge/.net8.0.0-3963bc.svg"/></a>
