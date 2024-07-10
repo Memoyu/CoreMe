@@ -340,4 +340,3 @@ ASALocalRun/
 healthchecksdb
 
 /src/CoreMe/Logs/
-src/CoreMe/appsettings.Production.json
