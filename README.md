@@ -1,5 +1,5 @@
-<h1 align="center">
-  <img src="https://raw.githubusercontent.com/Memoyu/Memoyu/main/logo.png" alt="memoyu" width="128" style="margin-bottom: 40px"/>
+<h1 align="center" style="margin-bottom: 40px">
+  <img src="https://raw.githubusercontent.com/Memoyu/Memoyu/main/logo.png" alt="memoyu" width="128" />
   CoreMe
 </h1>
 <div align="center">
