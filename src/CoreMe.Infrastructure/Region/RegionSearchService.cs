@@ -16,11 +16,6 @@ public class RegionSearchService(ISearcher searcher) : IRegionSearchService
         return searcher.Search(ipAddress) ?? string.Empty;
     }
 
-    public string Search(uint ipAddress)
-    {
-        return searcher.Search(ipAddress) ?? string.Empty;
-    }
-
     public RegionInfo SearchInfo(string ipStr)
     {
         var region = searcher.Search(ipStr);
@@ -28,12 +23,6 @@ public class RegionSearchService(ISearcher searcher) : IRegionSearchService
     }
 
     public RegionInfo SearchInfo(IPAddress ipAddress)
-    {
-        var region = searcher.Search(ipAddress);
-        return ToRegionInfo(region);
-    }
-
-    public RegionInfo SearchInfo(uint ipAddress)
     {
         var region = searcher.Search(ipAddress);
         return ToRegionInfo(region);

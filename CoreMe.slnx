@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/solution-items/">
+    <File Path=".dockerignore" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/CoreMe.Api/CoreMe.Api.csproj" />
+    <Project Path="src/CoreMe.Application/CoreMe.Application.csproj" />
+    <Project Path="src/CoreMe.Domain/CoreMe.Domain.csproj" />
+    <Project Path="src/CoreMe.Infrastructure/CoreMe.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="tests/CoreMe.Application.Test/CoreMe.Application.Test.csproj" />
+  </Folder>
+</Solution>

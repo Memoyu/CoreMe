@@ -8,13 +8,9 @@ public interface IRegionSearchService
 
     string Search(IPAddress ipAddress);
 
-    string Search(uint ipAddress);
-
     RegionInfo SearchInfo(string ipStr);
 
     RegionInfo SearchInfo(IPAddress ipAddress);
-
-    RegionInfo SearchInfo(uint ipAddress);
 
     RegionInfo ToRegionInfo(string? region);
 }

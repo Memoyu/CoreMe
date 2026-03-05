@@ -113,7 +113,7 @@ public static class DependencyInjection
                             code = ResultCode.TokenExpired;
                         }
                         else if (context.Error == "invalid_token"
-                            && context.ErrorDescription.IsNullOrEmpty())//Token失效
+                            && string.IsNullOrEmpty(context.ErrorDescription))//Token失效
                         {
                             message = "令牌失效";
                             code = ResultCode.TokenInvalidation;

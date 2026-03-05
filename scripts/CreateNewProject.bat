@@ -1,21 +1,21 @@
 color 3
 @echo off
 
-dotnet new -i .template\Memoyu.Core.WebApi.Template.1.0.0.nupkg
+dotnet new -i .template\CoreMeTemplate.2.0.0.nupkg
 
-set /p OP=Please set your project name(for example:Memoyu.Core):
+set /p OP=Please set your project name(for example:Memo.Core):
 
-md .NewProject
+md .project
 
-cd .NewProject
+cd .project
 
-dotnet new memoyucoretpl -n %OP%
+dotnet new coreme -n %OP%
 
 cd ../
 
 echo "----------------Create Successfully!! ^ please see the folder .NewProject----------------"
 
-dotnet new -u Memoyu.Core.WebApi.Template
+dotnet new uninstall CoreMeTemplate
 
 echo "----------------Delete Template Successfully!----------------"
 
