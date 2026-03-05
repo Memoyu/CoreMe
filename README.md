@@ -15,6 +15,42 @@
 作为个人.NET 开发技术的积累、实践合集，基于.NET 8实现基础的项目架构，为后期个人项目快速开发提供基座，开箱即用；
 遵循[CleanArchitecture](https://github.com/amantinband/clean-architecture)设计理念(Ctrl C + V)
 
+## 如何使用
+
+### 1. 构建新的模板（使用当前模板可直接到第2步）
+
+1. 将调整后的项目文件（解决方案下的文件，排除`.git、.github、.vs、template`等非项目文件或文件夹）全部拷贝到`template\Content`文件夹中。
+
+   ```
+   如需调整模板信息，可自行编辑template\Content\.template.config\template.json文件
+   ```
+
+2. 执行`Delete bin&obj Folder.bat`文件。
+
+   ```
+   此操作意欲删除项目产生的所有bin、obj等文件夹
+   ```
+
+3. 执行`template\PackTplNuget.bat`脚本，产出`.nupkg`文件，默认为`CoreMeTemplate.x.x.x.nupkg`。
+
+   ```
+   如需调整生成的nupkg文件信息，可自行编辑template\coreme.nuspec文件
+   ```
+
+4. 此时已完成新模板构建
+
+### 2. 使用当前模板
+
+1. 将`template`文件夹下的`.nupkg`文件拷贝到`cripts\.template`中，并根据`.nupkg`文件名调整`CreateNewProject.bat`文件内容。
+
+   ```
+   替换掉该段脚本的nupkg文件名：dotnet new -i .template\CoreMeTemplate.2.0.0.nupkg
+   ```
+
+2. 执行`CreateNewProject.bat`脚本，并根据提示填入信息
+
+3. 成功后`cripts`目录下会产出`.project`文件夹，文件夹内即为根据模板新建的项目
+
 
 ## 衍生项目
 

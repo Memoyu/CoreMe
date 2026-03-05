@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "memoyu", // 模板的作者
+  "classifications": [ "Web/WebAPI" ], // 模板的分类
+  "identity": "CoreMeTemplate", // 模板的唯一名称
+  "name": "CoreMeTpl", // 模板的名称
+  "shortName": "coreme", // 模板的简称
+  // 模板指定了一些标签
+  "tags": {
+    "language": "C#",
+    "type": "project"
+	},
+	"sourceName": "CoreMe",  // 要替换的名字 新建项目时将该字符串替换成新的名称
+	"preferNameDirectory":"true" // 是否生成相同名称的目录，可选
+}
