@@ -1,8 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using System.Threading;
-using CoreMe.Application.Common.Interfaces.Persistence.Repositories;
-using CoreMe.Domain.Common;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
