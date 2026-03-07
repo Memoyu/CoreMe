@@ -1,5 +1,5 @@
-﻿using CoreMe.Application.Common.Models.Settings;
-using CoreMe.Application.Common.Services.Background;
+﻿using CoreMe.Application.Common.Background;
+using CoreMe.Application.Common.Models.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;

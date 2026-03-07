@@ -1,4 +1,4 @@
-﻿using CoreMe.Application.Security;
+﻿using CoreMe.Application.Common.Security;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 

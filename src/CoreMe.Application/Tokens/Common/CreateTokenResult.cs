@@ -1,6 +1,6 @@
 ﻿namespace CoreMe.Application.Tokens.Common;
 
-public record GenerateTokenResult(
+public record CreateTokenResult(
     long UserId,
     string Username,
     string AccessToken,

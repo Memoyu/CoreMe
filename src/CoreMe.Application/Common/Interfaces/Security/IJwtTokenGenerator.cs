@@ -1,4 +1,4 @@
-﻿using CoreMe.Application.Security;
+﻿using CoreMe.Application.Common.Security;
 
 namespace CoreMe.Application.Common.Interfaces.Security;
 
@@ -9,12 +9,13 @@ public interface IJwtTokenGenerator
     /// </summary>
     /// <param name="user">用户信息</param>
     /// <returns></returns>
-    JwtTokenDto GenerateToken(User user);
+    Task<JwtTokenDto> GenerateTokenAsync(User user, CancellationToken cancellationToken);
 
     /// <summary>
     /// 刷新JWT Token
     /// </summary>
     /// <param name="user">用户信息</param>
     /// <returns></returns>
-    JwtTokenDto RefreshToken(User user);
+    Task<JwtTokenDto> RefreshTokenAsync(User user, CancellationToken cancellationToken);
 }
+

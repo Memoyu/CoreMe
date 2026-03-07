@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace CoreMe.Application.Common.Services.Background;
+namespace CoreMe.Application.Common.Background;
 
 internal abstract class BaseTaskService : BackgroundService
 {

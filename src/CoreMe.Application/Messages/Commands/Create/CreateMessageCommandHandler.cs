@@ -1,5 +1,5 @@
-﻿using CoreMe.Application.Messages.Common;
-using CoreMe.Application.Security;
+﻿using CoreMe.Application.Common.Security;
+using CoreMe.Application.Messages.Common;
 using CoreMe.Domain.Events.Messages;
 using Microsoft.Extensions.Logging;
 

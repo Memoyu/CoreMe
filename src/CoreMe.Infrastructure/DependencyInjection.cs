@@ -1,22 +1,25 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Builder;
-using Serilog.Events;
-using Serilog;
-using Microsoft.Extensions.Logging;
-using MongoDB.Driver;
-using System.Configuration;
-using IP2Region.Net.Abstractions;
-using IP2Region.Net.XDB;
-using Microsoft.AspNetCore.Hosting;
-using CoreMe.Infrastructure.Region;
+﻿using CoreMe.Application.Common.Interfaces.Services.Region;
+using CoreMe.Application.Common.Models.Settings;
+using CoreMe.Application.Common.Security;
+using CoreMe.Infrastructure.Persistence.Cache;
+using CoreMe.Infrastructure.Security.TokenGenerator;
+using CoreMe.Infrastructure.Services.Region;
 using EasyCaching.FreeRedis;
 using EasyCaching.Serialization.SystemTextJson.Configurations;
+using IP2Region.Net.Abstractions;
+using IP2Region.Net.XDB;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Distributed;
-using CoreMe.Infrastructure.Persistence.Cache;
-using CoreMe.Application.Common.Interfaces.Services.Region;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
+using MongoDB.Driver;
+using Serilog;
+using Serilog.Events;
+using System.Configuration;
 
 namespace CoreMe.Infrastructure;
 
@@ -29,7 +32,7 @@ public static class DependencyInjection
     {
         services
             .AddAuthorization() // 注册认证
-            .AddAuthentication() // 注册授权
+            .AddAuthentication(configuration) // 注册授权
             .AddPersistenceForMyql(configuration) // 注册MySql数据持久化组件（FreeSql）
             .AddPersistenceForMongo(configuration) // 注册MongoDb持久化组件（MongoDB.Driver）
             .AddAddEasyCaching(configuration) // 注册缓存组件
@@ -61,6 +64,7 @@ public static class DependencyInjection
             // 配置日志等级
             .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
             .MinimumLevel.Override("System", LogEventLevel.Information)
+            .MinimumLevel.Override("System.Net.Http.HttpClient", LogEventLevel.Warning)
 #endif
             .CreateLogger();
         builder.Logging.AddSerilog();
@@ -77,15 +81,42 @@ public static class DependencyInjection
         return services;
     }
 
-    private static IServiceCollection AddAuthentication(this IServiceCollection services)
+    private static IServiceCollection AddAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
+        var jwtOptions = configuration.GetSection(AppConst.AuthorizationSection)?.Get<AuthorizationSettings>()?.Jwt;
 
         services
             .ConfigureOptions<JwtBearerTokenValidationConfiguration>()
             .AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>//配置JWT
             {
+                if (jwtOptions == null)
+                    throw new ConfigurationErrorsException("未配置服务jwt授权信息");
+
+                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Secret));
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    // 密钥必须匹配
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = securityKey,
+
+                    // 验证Issuer
+                    ValidateIssuer = true,
+                    ValidIssuer = jwtOptions.Issuer,
+
+                    // 验证Audience
+                    ValidateAudience = true,
+                    ValidAudience = jwtOptions.Audience,
+
+                    // 验证过期时间
+                    ValidateLifetime = true,
+
+                    //偏移设置为了0s,用于测试过期策略,完全按照access_token的过期时间策略，默认原本为5分钟
+                    ClockSkew = TimeSpan.Zero
+                };
+
+
                 options.Events = new JwtBearerEvents()
                 {
                     OnAuthenticationFailed = context =>
@@ -113,7 +144,7 @@ public static class DependencyInjection
                             code = ResultCode.TokenExpired;
                         }
                         else if (context.Error == "invalid_token"
-                            && string.IsNullOrEmpty(context.ErrorDescription))//Token失效
+                            && string.IsNullOrWhiteSpace(context.ErrorDescription))//Token失效
                         {
                             message = "令牌失效";
                             code = ResultCode.TokenInvalidation;

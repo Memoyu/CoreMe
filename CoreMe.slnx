@@ -14,5 +14,6 @@
   </Folder>
   <Folder Name="/test/">
     <Project Path="tests/CoreMe.Application.Test/CoreMe.Application.Test.csproj" />
+    <Project Path="tests/CoreMe.Base.Test/CoreMe.Base.Test.csproj" Id="17e69b8f-0f14-4a63-8f77-63d51f16ae55" />
   </Folder>
 </Solution>

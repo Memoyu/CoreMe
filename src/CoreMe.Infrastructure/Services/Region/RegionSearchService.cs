@@ -2,7 +2,7 @@
 using IP2Region.Net.Abstractions;
 using CoreMe.Application.Common.Interfaces.Services.Region;
 
-namespace CoreMe.Infrastructure.Region;
+namespace CoreMe.Infrastructure.Services.Region;
 
 public class RegionSearchService(ISearcher searcher) : IRegionSearchService
 {

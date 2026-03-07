@@ -1,4 +1,4 @@
-﻿namespace CoreMe.Application.Security;
+﻿namespace CoreMe.Application.Common.Security;
 
 public record CurrentUser(
     long Id,

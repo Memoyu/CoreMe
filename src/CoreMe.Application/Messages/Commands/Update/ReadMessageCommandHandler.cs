@@ -1,4 +1,4 @@
-﻿using CoreMe.Application.Security;
+﻿using CoreMe.Application.Common.Security;
 
 namespace CoreMe.Application.Messages.Commands.Update;
 

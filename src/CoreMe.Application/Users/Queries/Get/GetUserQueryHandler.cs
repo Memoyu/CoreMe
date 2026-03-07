@@ -1,5 +1,5 @@
-﻿using CoreMe.Application.Roles.Common;
-using CoreMe.Application.Security;
+﻿using CoreMe.Application.Common.Security;
+using CoreMe.Application.Roles.Common;
 using CoreMe.Application.Users.Common;
 
 namespace CoreMe.Application.Users.Queries.Get;

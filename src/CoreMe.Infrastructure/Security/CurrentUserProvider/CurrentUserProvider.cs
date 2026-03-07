@@ -1,4 +1,5 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
+using CoreMe.Application.Common.Security;
 using Microsoft.AspNetCore.Http;
 
 namespace CoreMe.Infrastructure.Security.CurrentUserProvider;
@@ -7,13 +8,16 @@ public class CurrentUserProvider(IHttpContextAccessor _httpContextAccessor) : IC
 {
     public CurrentUser GetCurrentUser()
     {
-        if (_httpContextAccessor.HttpContext is null) return new CurrentUser(0, string.Empty, string.Empty); 
-       
-        var id = long.Parse(GetSingleClaimValue(ClaimTypes.NameIdentifier) ?? "0");
-        var username = GetSingleClaimValue(JwtRegisteredClaimNames.Name) ?? string.Empty;
-        var email = GetSingleClaimValue(ClaimTypes.Email) ?? string.Empty;
+        // 可能存在系统启动时数据同步时数据插入等场景。此时，用户认证信息为空。
+        if (_httpContextAccessor.HttpContext is null ||
+            _httpContextAccessor.HttpContext.User?.Claims?.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier) is null ||
+            !long.TryParse(GetSingleClaimValue(ClaimTypes.NameIdentifier), out var id))
+            return new CurrentUser(0, string.Empty, string.Empty);
 
-        return new CurrentUser(id, username, email);
+        return new CurrentUser(
+            id,
+            GetSingleClaimValue(JwtRegisteredClaimNames.Name) ?? string.Empty,
+            GetSingleClaimValue(ClaimTypes.Email) ?? string.Empty);
     }
 
     public long GetCurrentVisitor()

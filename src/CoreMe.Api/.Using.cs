@@ -7,4 +7,3 @@ global using CoreMe.Application;
 global using CoreMe.Domain.Constants;
 global using CoreMe.Infrastructure;
 global using CoreMe.Application.Common.Models;
-global using CoreMe.Application.Tokens.Queries.Generate;

@@ -1,4 +1,4 @@
-﻿using CoreMe.Application.Security;
+﻿using CoreMe.Application.Common.Security;
 using CoreMe.Application.Users.Common;
 
 namespace CoreMe.Application.Users.Queries.List;

@@ -3,6 +3,7 @@ using System.Linq.Expressions;
 using MediatR;
 using System.Reflection;
 using System.Collections.Concurrent;
+using CoreMe.Application.Common.Security;
 
 namespace CoreMe.Infrastructure.Persistence.Repositories;
 

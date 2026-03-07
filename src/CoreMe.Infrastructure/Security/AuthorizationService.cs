@@ -1,4 +1,6 @@
-﻿namespace CoreMe.Infrastructure.Security;
+﻿using CoreMe.Application.Common.Security;
+
+namespace CoreMe.Infrastructure.Security;
 
 public class AuthorizationService(
     ICurrentUserProvider currentUserProvider,

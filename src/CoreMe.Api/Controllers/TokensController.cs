@@ -1,4 +1,6 @@
-﻿namespace CoreMe.Api.Controllers;
+﻿using CoreMe.Application.Tokens.Commands.Create;
+
+namespace CoreMe.Api.Controllers;
 
 /// <summary>
 /// 用户授权
@@ -12,8 +14,8 @@ public class TokensController(ISender mediator) : ApiControllerBase
     /// </summary>
     /// <param name="request">用户账户、密码</param>
     /// <returns></returns>
-    [HttpPost("generate")]
-    public async Task<Result> GenerateAsync(GenerateTokenQuery request)
+    [HttpPost("create")]
+    public async Task<Result> CreateAsync(CreateTokenQuery request)
     {
         return await mediator.Send(request);
     }

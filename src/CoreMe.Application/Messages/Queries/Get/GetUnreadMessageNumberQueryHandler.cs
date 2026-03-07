@@ -1,5 +1,5 @@
-﻿using CoreMe.Application.Messages.Common;
-using CoreMe.Application.Security;
+﻿using CoreMe.Application.Common.Security;
+using CoreMe.Application.Messages.Common;
 
 namespace CoreMe.Application.Messages.Queries.Get;
 
