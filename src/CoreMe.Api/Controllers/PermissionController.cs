@@ -1,5 +1,4 @@
-﻿using CoreMe.Application.Permissions.Queries.Group;
-using CoreMe.Application.Permissions.Queries.List;
+﻿using CoreMe.Application.Permissions.Queries;
 
 namespace CoreMe.Api.Controllers;
 

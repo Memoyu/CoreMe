@@ -1,4 +1,4 @@
-﻿using CoreMe.Application.FileStorages.Queries.Generate;
+﻿using CoreMe.Application.FileStorages.Command;
 
 namespace CoreMe.Api.Controllers;
 

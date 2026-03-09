@@ -1,8 +1,5 @@
-﻿using CoreMe.Application.Roles.Commands.Create;
-using CoreMe.Application.Roles.Commands.Delete;
-using CoreMe.Application.Roles.Commands.Update;
-using CoreMe.Application.Roles.Queries.Get;
-using CoreMe.Application.Roles.Queries.List;
+﻿using CoreMe.Application.Roles.Commands;
+using CoreMe.Application.Roles.Queries;
 
 namespace CoreMe.Api.Controllers;
 

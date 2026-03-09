@@ -1,7 +1,5 @@
-﻿using CoreMe.Application.Messages.Commands.Create;
-using CoreMe.Application.Messages.Commands.Update;
-using CoreMe.Application.Messages.Queries.Get;
-using CoreMe.Application.Messages.Queries.Page;
+﻿using CoreMe.Application.Messages.Commands;
+using CoreMe.Application.Messages.Queries;
 
 namespace CoreMe.Api.Controllers
 {

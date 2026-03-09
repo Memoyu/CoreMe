@@ -1,9 +1,5 @@
-﻿using CoreMe.Application.Users.Commands.Create;
-using CoreMe.Application.Users.Commands.Delete;
-using CoreMe.Application.Users.Commands.Update;
-using CoreMe.Application.Users.Queries.Get;
-using CoreMe.Application.Users.Queries.List;
-using CoreMe.Application.Users.Queries.Page;
+﻿using CoreMe.Application.Users.Commands;
+using CoreMe.Application.Users.Queries;
 
 namespace CoreMe.Api.Controllers;
 

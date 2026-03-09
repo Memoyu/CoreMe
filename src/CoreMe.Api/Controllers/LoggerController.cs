@@ -1,5 +1,4 @@
-﻿using CoreMe.Application.Logger.Queries.System.Get;
-using CoreMe.Application.Logger.Queries.System.Page;
+﻿using CoreMe.Application.Loggers.Queries.System;
 
 namespace CoreMe.Api.Controllers;
 
