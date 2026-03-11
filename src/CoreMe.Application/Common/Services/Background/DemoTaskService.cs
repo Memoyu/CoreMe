@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace CoreMe.Application.Common.Background;
+namespace CoreMe.Application.Common.Services.Background;
 
 /// <summary>
 /// 定时任务演示

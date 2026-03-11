@@ -1,13 +1,13 @@
-﻿global using System.Linq;
-
-global using FluentValidation;
+﻿global using FluentValidation;
 global using MediatR;
 global using MapsterMapper;
 global using Mapster;
 
+global using CoreMe.Application.Common.Interfaces.Services.App;
 global using CoreMe.Application.Common.Interfaces.Security;
 global using CoreMe.Application.Common.Models;
 global using CoreMe.Application.Common.Behaviours;
+global using CoreMe.Application.Common.Attributes;
 global using CoreMe.Domain.Constants;
 global using CoreMe.Application.Common.Interfaces.Persistence.Repositories;
 global using CoreMe.Application.Tokens.Common;

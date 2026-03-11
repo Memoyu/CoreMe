@@ -1,5 +1,6 @@
-﻿using CoreMe.Application.Common.Background;
+﻿using CoreMe.Application.Common.Attributes;
 using CoreMe.Application.Common.Models.Settings;
+using CoreMe.Application.Common.Services.Background;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -40,6 +41,9 @@ public static class DependencyInjection
         // 注册实体映射组件
         services.AddMapper();
 
+        // 注册app服务
+        services.AddAppServices();
+
         // 注册后台任务
         services.AddHostedServices();
 
@@ -77,5 +81,59 @@ public static class DependencyInjection
         services.AddHostedService<DemoTaskService>();
 
         return services;
+    }
+
+    /// <summary>
+    /// 注册App服务
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns></returns>
+    private static IServiceCollection AddAppServices(this IServiceCollection services)
+    {
+        var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+        services.AddAssemblyServices(assemblyName ?? string.Empty);
+
+        return services;
+    }
+
+    /// <summary>
+    /// 批量注册Service
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="assemblyName"></param>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static void AddAssemblyServices(this IServiceCollection services, string assemblyName)
+    {
+        if (string.IsNullOrWhiteSpace(assemblyName)) throw new ArgumentNullException("注册AppService异常，传入的assemblyName为空");
+
+        // 获取需要注入的类
+        List<Type> types = Assembly.Load(assemblyName).GetTypes()
+            .Where(t => t.IsClass && !t.IsAbstract && t.GetCustomAttributes(typeof(AppServiceAttribute), false).Length > 0)
+            .ToList();
+
+        // 注册类型
+        types.ForEach(impl =>
+        {
+            //获取该类所继承的所有接口
+            Type[] interfaces = impl.GetInterfaces();
+            //获取该类注入的生命周期
+            var lifetime = impl.GetCustomAttribute<AppServiceAttribute>()!.ServiceLifeType;
+
+            interfaces.ToList().ForEach(i =>
+            {
+                switch (lifetime)
+                {
+                    case ServiceLifeType.Singleton:
+                        services.AddSingleton(i, impl);
+                        break;
+                    case ServiceLifeType.Scoped:
+                        services.AddScoped(i, impl);
+                        break;
+                    case ServiceLifeType.Transient:
+                        services.AddTransient(i, impl);
+                        break;
+                }
+            });
+        });
     }
 }

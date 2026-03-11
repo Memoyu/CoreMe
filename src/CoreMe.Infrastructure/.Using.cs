@@ -4,6 +4,7 @@ global using System.Text;
 
 global using Microsoft.Extensions.Configuration;
 
+global using CoreMe.Application.Common.Attributes;
 global using CoreMe.Application.Common.Security;
 global using CoreMe.Application.Common.Utils;
 global using CoreMe.Application.Common.Interfaces.Security;

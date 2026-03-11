@@ -4,7 +4,7 @@ using CoreMe.Application.Users.Common;
 
 namespace CoreMe.Application.Users.Queries;
 
-public  record GetUserQuery(long? UserId) : IAuthorizeableRequest<Result>;
+public record GetUserQuery(long? UserId) : IAuthorizeableRequest<Result>;
 
 public class GetUserQueryValidator : AbstractValidator<GetUserQuery>
 {

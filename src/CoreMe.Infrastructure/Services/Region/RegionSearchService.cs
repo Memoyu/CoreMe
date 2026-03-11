@@ -1,9 +1,10 @@
-﻿using System.Net;
+﻿using CoreMe.Application.Common.Interfaces.Services.Region;
 using IP2Region.Net.Abstractions;
-using CoreMe.Application.Common.Interfaces.Services.Region;
+using System.Net;
 
 namespace CoreMe.Infrastructure.Services.Region;
 
+[AppService(ServiceLifeType = ServiceLifeType.Singleton)]
 public class RegionSearchService(ISearcher searcher) : IRegionSearchService
 {
     public string Search(string ipStr)

@@ -1,9 +1,7 @@
-﻿using CoreMe.Application.Common.Interfaces.Services.Region;
+﻿using CoreMe.Application;
 using CoreMe.Application.Common.Models.Settings;
-using CoreMe.Application.Common.Security;
 using CoreMe.Infrastructure.Persistence.Cache;
 using CoreMe.Infrastructure.Security.TokenGenerator;
-using CoreMe.Infrastructure.Services.Region;
 using EasyCaching.FreeRedis;
 using EasyCaching.Serialization.SystemTextJson.Configurations;
 using IP2Region.Net.Abstractions;
@@ -20,6 +18,7 @@ using MongoDB.Driver;
 using Serilog;
 using Serilog.Events;
 using System.Configuration;
+using System.Reflection;
 
 namespace CoreMe.Infrastructure;
 
@@ -36,7 +35,7 @@ public static class DependencyInjection
             .AddPersistenceForMyql(configuration) // 注册MySql数据持久化组件（FreeSql）
             .AddPersistenceForMongo(configuration) // 注册MongoDb持久化组件（MongoDB.Driver）
             .AddAddEasyCaching(configuration) // 注册缓存组件
-            .AddIp2Region() // 注册IP地址定位
+            .AddExternalServices() // 注册外部服务
             .AddSignalR(); // 注册 SignalR 服务
 
         return services;
@@ -180,23 +179,6 @@ public static class DependencyInjection
     }
 
     /// <summary>
-    /// 注册IP地址定位
-    /// </summary>
-    /// <param name="services"></param>
-    /// <returns></returns>
-    public static IServiceCollection AddIp2Region(this IServiceCollection services)
-    {
-        var sp = services.BuildServiceProvider();
-        var env = sp.GetRequiredService<IWebHostEnvironment>();
-        string xdbPath = Path.Combine(env.WebRootPath, "Assets", "ip2region.xdb");
-
-        services.AddSingleton<ISearcher>(new Searcher(CachePolicy.Content, xdbPath));
-        services.AddSingleton<IRegionSearchService, RegionSearchService>();
-
-        return services;
-    }
-
-    /// <summary>
     /// 注册缓存组件
     /// </summary>
     /// <param name="services"></param>
@@ -216,6 +198,38 @@ public static class DependencyInjection
 
         // 注册EasyCaching分布式缓存
         services.AddSingleton<IDistributedCache, EasyCachingRedisDistributedCache>();
+
+        return services;
+    }
+
+
+    /// <summary>
+    /// 注册外部服务
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns></returns>
+    private static IServiceCollection AddExternalServices(this IServiceCollection services)
+    {
+        // 初始化IP地址定位组件
+        InitIp2Region(services);
+
+        var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+        services.AddAssemblyServices(assemblyName ?? string.Empty);
+
+        return services;
+    }
+
+    /// <summary>
+    /// 初始化IP地址定位组件
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns></returns>
+    private static IServiceCollection InitIp2Region(IServiceCollection services)
+    {
+        var sp = services.BuildServiceProvider();
+        var env = sp.GetRequiredService<IWebHostEnvironment>();
+        string xdbPath = Path.Combine(env.WebRootPath, "Assets", "ip2region.xdb");
+        services.AddSingleton<ISearcher>(new Searcher(CachePolicy.Content, xdbPath));
 
         return services;
     }
